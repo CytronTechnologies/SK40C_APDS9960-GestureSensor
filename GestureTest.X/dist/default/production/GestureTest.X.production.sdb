@@ -1,0 +1,763 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"127 C:\Users\User\Desktop\GestureTest.X\GestureTest.c
+[e E1222 . `uc
+DIR_NONE 0
+DIR_LEFT 1
+DIR_RIGHT 2
+DIR_UP 3
+DIR_DOWN 4
+DIR_NEAR 5
+DIR_FAR 6
+DIR_ALL 7
+]
+"467 C:\Users\User\Desktop\GestureTest.X\APDS9960.c
+[e E70 . `uc
+DIR_NONE 0
+DIR_LEFT 1
+DIR_RIGHT 2
+DIR_UP 3
+DIR_DOWN 4
+DIR_NEAR 5
+DIR_FAR 6
+DIR_ALL 7
+]
+"761
+[e E79 . `uc
+NA_STATE 0
+NEAR_STATE 1
+FAR_STATE 2
+ALL_STATE 3
+]
+"18
+[v _initialize initialize `(uc  1 e 1 0 ]
+"118
+[v _setMode setMode `(uc  1 e 1 0 ]
+"153
+[v _getMode getMode `(uc  1 e 1 0 ]
+"164
+[v _setLEDDrive setLEDDrive `(uc  1 e 1 0 ]
+"186
+[v _setProximityGain setProximityGain `(uc  1 e 1 0 ]
+"207
+[v _setAmbientLightGain setAmbientLightGain `(uc  1 e 1 0 ]
+"228
+[v _setProxIntLowThresh setProxIntLowThresh `(uc  1 e 1 0 ]
+"238
+[v _setProxIntHighThresh setProxIntHighThresh `(uc  1 e 1 0 ]
+"248
+[v _setLightIntLowThreshold setLightIntLowThreshold `(uc  1 e 1 0 ]
+"271
+[v _setLightIntHighThreshold setLightIntHighThreshold `(uc  1 e 1 0 ]
+"294
+[v _setGestureEnterThresh setGestureEnterThresh `(uc  1 e 1 0 ]
+"304
+[v _setGestureExitThresh setGestureExitThresh `(uc  1 e 1 0 ]
+"314
+[v _setGestureGain setGestureGain `(uc  1 e 1 0 ]
+"337
+[v _setGestureLEDDrive setGestureLEDDrive `(uc  1 e 1 0 ]
+"360
+[v _setGestureWaitTime setGestureWaitTime `(uc  1 e 1 0 ]
+"381
+[v _setGestureIntEnable setGestureIntEnable `(uc  1 e 1 0 ]
+"403
+[v _enableGestureSensor enableGestureSensor `(uc  1 e 1 0 ]
+"451
+[v _resetGestureParameters resetGestureParameters `(v  1 e 0 0 ]
+"478
+[v _setLEDBoost setLEDBoost `(uc  1 e 1 0 ]
+"500
+[v _setGestureMode setGestureMode `(uc  1 e 1 0 ]
+"521
+[v _enablePower enablePower `(uc  1 e 1 0 ]
+"531
+[v _isGestureAvailable isGestureAvailable `(uc  1 e 1 0 ]
+"550
+[v _readGesture readGesture `(i  1 e 2 0 ]
+"651
+[v _processGestureData processGestureData `(uc  1 e 1 0 ]
+"789
+[v _decodeGesture decodeGesture `(uc  1 e 1 0 ]
+"841
+[v _wireReadDataBlock wireReadDataBlock `(i  1 e 2 0 ]
+"866
+[v _wireWriteDataByte wireWriteDataByte `(i  1 e 2 0 ]
+"879
+[v _wireReadDataByte wireReadDataByte `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 0 0 ]
+"24
+[v _memcpyee memcpyee `(v  1 e 0 0 ]
+"36 C:\Users\User\Desktop\GestureTest.X\GestureTest.c
+[v _isr isr `II(v  1 e 0 0 ]
+"47
+[v _main main `(i  1 e 2 0 ]
+"123
+[v _handleGesture handleGesture `(v  1 e 0 0 ]
+"175
+[v _DelayMs DelayMs `(v  1 e 0 0 ]
+"11 C:\Users\User\Desktop\GestureTest.X\i2c.c
+[v _InitI2C InitI2C `(v  1 e 0 0 ]
+"29
+[v _I2C_Start I2C_Start `(v  1 e 0 0 ]
+"36
+[v _I2C_ReStart I2C_ReStart `(v  1 e 0 0 ]
+"43
+[v _I2C_Stop I2C_Stop `(v  1 e 0 0 ]
+"58
+[v _I2C_Send_NACK I2C_Send_NACK `(v  1 e 0 0 ]
+"66
+[v _I2C_Write_Byte I2C_Write_Byte `(v  1 e 0 0 ]
+"87
+[v _I2C_Read_Byte I2C_Read_Byte `(uc  1 e 1 0 ]
+"100 C:\Users\User\Desktop\GestureTest.X\lcd.c
+[v _lcd_initialize lcd_initialize `(v  1 e 0 0 ]
+"136
+[v _lcd_clear lcd_clear `(v  1 e 0 0 ]
+"157
+[v _lcd_home lcd_home `(v  1 e 0 0 ]
+"178
+[v _lcd_2ndline lcd_2ndline `(v  1 e 0 0 ]
+"199
+[v _lcd_goto lcd_goto `(v  1 e 0 0 ]
+"220
+[v _lcd_putchar lcd_putchar `(v  1 e 0 0 ]
+"241
+[v _lcd_putstr lcd_putstr `(v  1 e 0 0 ]
+"308
+[v _send_lcd_data send_lcd_data `(v  1 e 0 0 ]
+"340
+[v _set_lcd_e set_lcd_e `(v  1 e 0 0 ]
+"360
+[v _set_lcd_rs set_lcd_rs `(v  1 e 0 0 ]
+"380
+[v _set_lcd_data set_lcd_data `(v  1 e 0 0 ]
+[s S19 gesture_data_type 68 `[16]uc 1 u_data 16 0 `[16]uc 1 d_data 16 16 `[16]uc 1 l_data 16 32 `[16]uc 1 r_data 16 48 `uc 1 index 1 64 `uc 1 total_gestures 1 65 `uc 1 in_threshold 1 66 `uc 1 out_threshold 1 67 ]
+"298 C:\Users\User\Desktop\GestureTest.X\APDS9960.h
+[v _gesture_data_ gesture_data_ `S19  1 e 68 0 ]
+"299
+[v _gesture_ud_delta_ gesture_ud_delta_ `i  1 e 2 0 ]
+"300
+[v _gesture_lr_delta_ gesture_lr_delta_ `i  1 e 2 0 ]
+"301
+[v _gesture_ud_count_ gesture_ud_count_ `i  1 e 2 0 ]
+"302
+[v _gesture_lr_count_ gesture_lr_count_ `i  1 e 2 0 ]
+"303
+[v _gesture_near_count_ gesture_near_count_ `i  1 e 2 0 ]
+"304
+[v _gesture_far_count_ gesture_far_count_ `i  1 e 2 0 ]
+"305
+[v _gesture_state_ gesture_state_ `i  1 e 2 0 ]
+"306
+[v _gesture_motion_ gesture_motion_ `i  1 e 2 0 ]
+"160 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f877a.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"209
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"270
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"331
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"392
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+"787
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"793
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1219
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1288
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1337
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1398
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1459
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1520
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1776
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"1782
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+[s S445 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"1836
+[s S454 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S459 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S465 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S470 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S475 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S480 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S485 . 1 `S445 1 . 1 0 `S454 1 . 1 0 `S459 1 . 1 0 `S465 1 . 1 0 `S470 1 . 1 0 `S475 1 . 1 0 `S480 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES485  1 e 1 @148 ]
+"2313
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"2315
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"2317
+[v _ACKSTAT ACKSTAT `VEb  1 e 0 @1166 ]
+"2339
+[v _BF BF `VEb  1 e 0 @1184 ]
+"2443
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2463
+[v _INTE INTE `VEb  1 e 0 @92 ]
+"2467
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"2483
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2485
+[v _PEN PEN `VEb  1 e 0 @1162 ]
+"2521
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"2523
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"2555
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"2591
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"2601
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"2709
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2711
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"31 C:\Users\User\Desktop\GestureTest.X\GestureTest.c
+[v _handleGestureFlag handleGestureFlag `uc  1 e 1 0 ]
+"8 C:\Users\User\Desktop\GestureTest.X\i2c.c
+[v _b_i2c_error_flag b_i2c_error_flag `uc  1 e 1 0 ]
+"47 C:\Users\User\Desktop\GestureTest.X\GestureTest.c
+[v _main main `(i  1 e 2 0 ]
+{
+"121
+} 0
+"100 C:\Users\User\Desktop\GestureTest.X\lcd.c
+[v _lcd_initialize lcd_initialize `(v  1 e 0 0 ]
+{
+"119
+} 0
+"199
+[v _lcd_goto lcd_goto `(v  1 e 0 0 ]
+{
+[v lcd_goto@uc_position uc_position `uc  1 a 1 wreg ]
+[v lcd_goto@uc_position uc_position `uc  1 a 1 wreg ]
+"202
+[v lcd_goto@uc_position uc_position `uc  1 a 1 4 ]
+"203
+} 0
+"18 C:\Users\User\Desktop\GestureTest.X\APDS9960.c
+[v _initialize initialize `(uc  1 e 1 0 ]
+{
+"21
+[v initialize@id id `uc  1 a 1 18 ]
+"115
+} 0
+"186
+[v _setProximityGain setProximityGain `(uc  1 e 1 0 ]
+{
+[v setProximityGain@drive drive `uc  1 a 1 wreg ]
+"188
+[v setProximityGain@val val `uc  1 a 1 12 ]
+"186
+[v setProximityGain@drive drive `uc  1 a 1 wreg ]
+"191
+[v setProximityGain@drive drive `uc  1 a 1 13 ]
+"204
+} 0
+"228
+[v _setProxIntLowThresh setProxIntLowThresh `(uc  1 e 1 0 ]
+{
+[v setProxIntLowThresh@threshold threshold `uc  1 a 1 wreg ]
+[v setProxIntLowThresh@threshold threshold `uc  1 a 1 wreg ]
+"230
+[v setProxIntLowThresh@threshold threshold `uc  1 a 1 4 ]
+"235
+} 0
+"238
+[v _setProxIntHighThresh setProxIntHighThresh `(uc  1 e 1 0 ]
+{
+[v setProxIntHighThresh@threshold threshold `uc  1 a 1 wreg ]
+[v setProxIntHighThresh@threshold threshold `uc  1 a 1 wreg ]
+"240
+[v setProxIntHighThresh@threshold threshold `uc  1 a 1 4 ]
+"245
+} 0
+"248
+[v _setLightIntLowThreshold setLightIntLowThreshold `(uc  1 e 1 0 ]
+{
+"251
+[v setLightIntLowThreshold@val_high val_high `uc  1 a 1 7 ]
+"250
+[v setLightIntLowThreshold@val_low val_low `uc  1 a 1 6 ]
+"248
+[v setLightIntLowThreshold@threshold threshold `ui  1 p 2 3 ]
+"268
+} 0
+"271
+[v _setLightIntHighThreshold setLightIntHighThreshold `(uc  1 e 1 0 ]
+{
+"274
+[v setLightIntHighThreshold@val_high val_high `uc  1 a 1 7 ]
+"273
+[v setLightIntHighThreshold@val_low val_low `uc  1 a 1 6 ]
+"271
+[v setLightIntHighThreshold@threshold threshold `ui  1 p 2 3 ]
+"291
+} 0
+"164
+[v _setLEDDrive setLEDDrive `(uc  1 e 1 0 ]
+{
+[v setLEDDrive@drive drive `uc  1 a 1 wreg ]
+"166
+[v setLEDDrive@val val `uc  1 a 1 12 ]
+"164
+[v setLEDDrive@drive drive `uc  1 a 1 wreg ]
+"169
+[v setLEDDrive@drive drive `uc  1 a 1 13 ]
+"183
+} 0
+"360
+[v _setGestureWaitTime setGestureWaitTime `(uc  1 e 1 0 ]
+{
+[v setGestureWaitTime@time time `uc  1 a 1 wreg ]
+"362
+[v setGestureWaitTime@val val `uc  1 a 1 12 ]
+"360
+[v setGestureWaitTime@time time `uc  1 a 1 wreg ]
+"365
+[v setGestureWaitTime@time time `uc  1 a 1 11 ]
+"378
+} 0
+"337
+[v _setGestureLEDDrive setGestureLEDDrive `(uc  1 e 1 0 ]
+{
+[v setGestureLEDDrive@drive drive `uc  1 a 1 wreg ]
+"339
+[v setGestureLEDDrive@val val `uc  1 a 1 12 ]
+"337
+[v setGestureLEDDrive@drive drive `uc  1 a 1 wreg ]
+"342
+[v setGestureLEDDrive@drive drive `uc  1 a 1 13 ]
+"357
+} 0
+"314
+[v _setGestureGain setGestureGain `(uc  1 e 1 0 ]
+{
+[v setGestureGain@gain gain `uc  1 a 1 wreg ]
+"316
+[v setGestureGain@val val `uc  1 a 1 12 ]
+"314
+[v setGestureGain@gain gain `uc  1 a 1 wreg ]
+"319
+[v setGestureGain@gain gain `uc  1 a 1 13 ]
+"334
+} 0
+"304
+[v _setGestureExitThresh setGestureExitThresh `(uc  1 e 1 0 ]
+{
+[v setGestureExitThresh@threshold threshold `uc  1 a 1 wreg ]
+[v setGestureExitThresh@threshold threshold `uc  1 a 1 wreg ]
+"306
+[v setGestureExitThresh@threshold threshold `uc  1 a 1 4 ]
+"311
+} 0
+"294
+[v _setGestureEnterThresh setGestureEnterThresh `(uc  1 e 1 0 ]
+{
+[v setGestureEnterThresh@threshold threshold `uc  1 a 1 wreg ]
+[v setGestureEnterThresh@threshold threshold `uc  1 a 1 wreg ]
+"296
+[v setGestureEnterThresh@threshold threshold `uc  1 a 1 4 ]
+"301
+} 0
+"207
+[v _setAmbientLightGain setAmbientLightGain `(uc  1 e 1 0 ]
+{
+[v setAmbientLightGain@drive drive `uc  1 a 1 wreg ]
+"209
+[v setAmbientLightGain@val val `uc  1 a 1 12 ]
+"207
+[v setAmbientLightGain@drive drive `uc  1 a 1 wreg ]
+"212
+[v setAmbientLightGain@drive drive `uc  1 a 1 11 ]
+"225
+} 0
+"11 C:\Users\User\Desktop\GestureTest.X\i2c.c
+[v _InitI2C InitI2C `(v  1 e 0 0 ]
+{
+"21
+} 0
+"123 C:\Users\User\Desktop\GestureTest.X\GestureTest.c
+[v _handleGesture handleGesture `(v  1 e 0 0 ]
+{
+"173
+} 0
+"550 C:\Users\User\Desktop\GestureTest.X\APDS9960.c
+[v _readGesture readGesture `(i  1 e 2 0 ]
+{
+"554
+[v readGesture@fifo_data fifo_data `[64]uc  1 a 64 0 ]
+"555
+[v readGesture@fifo_data2 fifo_data2 `[64]uc  1 a 64 0 ]
+"558
+[v readGesture@i i `i  1 a 2 55 ]
+"553
+[v readGesture@bytes_read bytes_read `i  1 a 2 52 ]
+"557
+[v readGesture@motion motion `i  1 a 2 49 ]
+"552
+[v readGesture@fifo_level fifo_level `uc  1 a 1 54 ]
+"556
+[v readGesture@gstatus gstatus `uc  1 a 1 51 ]
+"648
+} 0
+"841
+[v _wireReadDataBlock wireReadDataBlock `(i  1 e 2 0 ]
+{
+[v wireReadDataBlock@reg reg `uc  1 a 1 wreg ]
+"843
+[v wireReadDataBlock@j j `uc  1 a 1 16 ]
+"841
+[v wireReadDataBlock@reg reg `uc  1 a 1 wreg ]
+[v wireReadDataBlock@val val `*.39uc  1 p 2 8 ]
+[v wireReadDataBlock@len len `ui  1 p 2 10 ]
+"843
+[v wireReadDataBlock@reg reg `uc  1 a 1 15 ]
+"863
+} 0
+"651
+[v _processGestureData processGestureData `(uc  1 e 1 0 ]
+{
+"667
+[v processGestureData@i i `i  1 a 2 43 ]
+"666
+[v processGestureData@lr_delta lr_delta `i  1 a 2 41 ]
+"665
+[v processGestureData@ud_delta ud_delta `i  1 a 2 39 ]
+"664
+[v processGestureData@lr_ratio_last lr_ratio_last `i  1 a 2 21 ]
+"663
+[v processGestureData@ud_ratio_last ud_ratio_last `i  1 a 2 19 ]
+"662
+[v processGestureData@lr_ratio_first lr_ratio_first `i  1 a 2 17 ]
+"661
+[v processGestureData@ud_ratio_first ud_ratio_first `i  1 a 2 15 ]
+"656
+[v processGestureData@r_first r_first `uc  1 a 1 38 ]
+"655
+[v processGestureData@l_first l_first `uc  1 a 1 37 ]
+"654
+[v processGestureData@d_first d_first `uc  1 a 1 36 ]
+"653
+[v processGestureData@u_first u_first `uc  1 a 1 35 ]
+"660
+[v processGestureData@r_last r_last `uc  1 a 1 34 ]
+"659
+[v processGestureData@l_last l_last `uc  1 a 1 33 ]
+"658
+[v processGestureData@d_last d_last `uc  1 a 1 32 ]
+"657
+[v processGestureData@u_last u_last `uc  1 a 1 31 ]
+"786
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 11 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 10 ]
+[v ___awdiv@counter counter `uc  1 a 1 9 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 4 ]
+[v ___awdiv@dividend dividend `i  1 p 2 6 ]
+"42
+} 0
+"531 C:\Users\User\Desktop\GestureTest.X\APDS9960.c
+[v _isGestureAvailable isGestureAvailable `(uc  1 e 1 0 ]
+{
+"533
+[v isGestureAvailable@val val `uc  1 a 1 11 ]
+"547
+} 0
+"789
+[v _decodeGesture decodeGesture `(uc  1 e 1 0 ]
+{
+"838
+} 0
+"241 C:\Users\User\Desktop\GestureTest.X\lcd.c
+[v _lcd_putstr lcd_putstr `(v  1 e 0 0 ]
+{
+[v lcd_putstr@csz_string csz_string `*.24DCCuc  1 a 1 wreg ]
+[v lcd_putstr@csz_string csz_string `*.24DCCuc  1 a 1 wreg ]
+[v lcd_putstr@csz_string csz_string `*.24DCCuc  1 a 1 6 ]
+"259
+} 0
+"220
+[v _lcd_putchar lcd_putchar `(v  1 e 0 0 ]
+{
+[v lcd_putchar@c_data c_data `uc  1 a 1 wreg ]
+[v lcd_putchar@c_data c_data `uc  1 a 1 wreg ]
+"223
+[v lcd_putchar@c_data c_data `uc  1 a 1 4 ]
+"224
+} 0
+"178
+[v _lcd_2ndline lcd_2ndline `(v  1 e 0 0 ]
+{
+"182
+} 0
+"157
+[v _lcd_home lcd_home `(v  1 e 0 0 ]
+{
+"161
+} 0
+"136
+[v _lcd_clear lcd_clear `(v  1 e 0 0 ]
+{
+"140
+} 0
+"308
+[v _send_lcd_data send_lcd_data `(v  1 e 0 0 ]
+{
+[v send_lcd_data@b_rs b_rs `uc  1 a 1 wreg ]
+[v send_lcd_data@b_rs b_rs `uc  1 a 1 wreg ]
+[v send_lcd_data@uc_data uc_data `uc  1 p 1 5 ]
+"311
+[v send_lcd_data@b_rs b_rs `uc  1 a 1 2 ]
+"323
+} 0
+"360
+[v _set_lcd_rs set_lcd_rs `(v  1 e 0 0 ]
+{
+[v set_lcd_rs@b_output b_output `uc  1 a 1 wreg ]
+[v set_lcd_rs@b_output b_output `uc  1 a 1 wreg ]
+"362
+[v set_lcd_rs@b_output b_output `uc  1 a 1 4 ]
+"363
+} 0
+"340
+[v _set_lcd_e set_lcd_e `(v  1 e 0 0 ]
+{
+[v set_lcd_e@b_output b_output `uc  1 a 1 wreg ]
+[v set_lcd_e@b_output b_output `uc  1 a 1 wreg ]
+"342
+[v set_lcd_e@b_output b_output `uc  1 a 1 4 ]
+"343
+} 0
+"380
+[v _set_lcd_data set_lcd_data `(v  1 e 0 0 ]
+{
+[v set_lcd_data@uc_data uc_data `uc  1 a 1 wreg ]
+[v set_lcd_data@uc_data uc_data `uc  1 a 1 wreg ]
+"382
+[v set_lcd_data@uc_data uc_data `uc  1 a 1 4 ]
+"383
+} 0
+"403 C:\Users\User\Desktop\GestureTest.X\APDS9960.c
+[v _enableGestureSensor enableGestureSensor `(uc  1 e 1 0 ]
+{
+[v enableGestureSensor@interrupts interrupts `uc  1 a 1 wreg ]
+[v enableGestureSensor@interrupts interrupts `uc  1 a 1 wreg ]
+"412
+[v enableGestureSensor@interrupts interrupts `uc  1 a 1 18 ]
+"448
+} 0
+"478
+[v _setLEDBoost setLEDBoost `(uc  1 e 1 0 ]
+{
+[v setLEDBoost@boost boost `uc  1 a 1 wreg ]
+"480
+[v setLEDBoost@val val `uc  1 a 1 12 ]
+"478
+[v setLEDBoost@boost boost `uc  1 a 1 wreg ]
+"483
+[v setLEDBoost@boost boost `uc  1 a 1 13 ]
+"497
+} 0
+"500
+[v _setGestureMode setGestureMode `(uc  1 e 1 0 ]
+{
+[v setGestureMode@mode mode `uc  1 a 1 wreg ]
+"502
+[v setGestureMode@val val `uc  1 a 1 12 ]
+"500
+[v setGestureMode@mode mode `uc  1 a 1 wreg ]
+"505
+[v setGestureMode@mode mode `uc  1 a 1 11 ]
+"518
+} 0
+"381
+[v _setGestureIntEnable setGestureIntEnable `(uc  1 e 1 0 ]
+{
+[v setGestureIntEnable@enable enable `uc  1 a 1 wreg ]
+"383
+[v setGestureIntEnable@val val `uc  1 a 1 12 ]
+"381
+[v setGestureIntEnable@enable enable `uc  1 a 1 wreg ]
+"386
+[v setGestureIntEnable@enable enable `uc  1 a 1 13 ]
+"400
+} 0
+"451
+[v _resetGestureParameters resetGestureParameters `(v  1 e 0 0 ]
+{
+"468
+} 0
+"521
+[v _enablePower enablePower `(uc  1 e 1 0 ]
+{
+"528
+} 0
+"118
+[v _setMode setMode `(uc  1 e 1 0 ]
+{
+[v setMode@mode mode `uc  1 a 1 wreg ]
+"120
+[v setMode@reg_val reg_val `uc  1 a 1 15 ]
+"118
+[v setMode@mode mode `uc  1 a 1 wreg ]
+[v setMode@enable enable `uc  1 p 1 12 ]
+"123
+[v setMode@mode mode `uc  1 a 1 16 ]
+"150
+} 0
+"866
+[v _wireWriteDataByte wireWriteDataByte `(i  1 e 2 0 ]
+{
+[v wireWriteDataByte@reg reg `uc  1 a 1 wreg ]
+[v wireWriteDataByte@reg reg `uc  1 a 1 wreg ]
+[v wireWriteDataByte@val val `uc  1 p 1 0 ]
+"869
+[v wireWriteDataByte@reg reg `uc  1 a 1 5 ]
+"876
+} 0
+"153
+[v _getMode getMode `(uc  1 e 1 0 ]
+{
+"155
+[v getMode@enable_value enable_value `uc  1 a 1 11 ]
+"161
+} 0
+"879
+[v _wireReadDataByte wireReadDataByte `(uc  1 e 1 0 ]
+{
+[v wireReadDataByte@reg reg `uc  1 a 1 wreg ]
+"882
+[v wireReadDataByte@val val `uc  1 a 1 9 ]
+"879
+[v wireReadDataByte@reg reg `uc  1 a 1 wreg ]
+"884
+[v wireReadDataByte@reg reg `uc  1 a 1 8 ]
+"895
+} 0
+"66 C:\Users\User\Desktop\GestureTest.X\i2c.c
+[v _I2C_Write_Byte I2C_Write_Byte `(v  1 e 0 0 ]
+{
+[v I2C_Write_Byte@Byte Byte `uc  1 a 1 wreg ]
+[v I2C_Write_Byte@Byte Byte `uc  1 a 1 wreg ]
+"69
+[v I2C_Write_Byte@Byte Byte `uc  1 a 1 4 ]
+"84
+} 0
+"43
+[v _I2C_Stop I2C_Stop `(v  1 e 0 0 ]
+{
+"47
+} 0
+"29
+[v _I2C_Start I2C_Start `(v  1 e 0 0 ]
+{
+"33
+} 0
+"58
+[v _I2C_Send_NACK I2C_Send_NACK `(v  1 e 0 0 ]
+{
+"63
+} 0
+"87
+[v _I2C_Read_Byte I2C_Read_Byte `(uc  1 e 1 0 ]
+{
+"92
+[v I2C_Read_Byte@count count `ul  1 a 4 4 ]
+"108
+} 0
+"36
+[v _I2C_ReStart I2C_ReStart `(v  1 e 0 0 ]
+{
+"40
+} 0
+"175 C:\Users\User\Desktop\GestureTest.X\GestureTest.c
+[v _DelayMs DelayMs `(v  1 e 0 0 ]
+{
+"177
+[v DelayMs@delay_cnst delay_cnst `i  1 a 2 0 ]
+"175
+[v DelayMs@Ms Ms `ui  1 p 2 4 ]
+"183
+} 0
+"36
+[v _isr isr `II(v  1 e 0 0 ]
+{
+"45
+} 0

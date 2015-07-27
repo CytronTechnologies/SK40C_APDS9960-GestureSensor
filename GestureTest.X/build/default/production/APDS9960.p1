@@ -1,0 +1,3587 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"209 APDS9960.h
+[s S1 `uc -> 16 `i `uc -> 16 `i `uc -> 16 `i `uc -> 16 `i `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1 gesture_data_type u_data d_data l_data r_data index total_gestures in_threshold out_threshold ]
+"27 i2c.h
+[v _InitI2C `(v ~T0 @X0 0 ef ]
+"293 APDS9960.h
+[v _wireReadDataByte `(uc ~T0 @X0 0 ef1`uc ]
+"223
+[v _setMode `(uc ~T0 @X0 0 ef2`uc`uc ]
+"292
+[v _wireWriteDataByte `(i ~T0 @X0 0 ef2`uc`uc ]
+"235
+[v _setLEDDrive `(uc ~T0 @X0 0 ef1`uc ]
+"243
+[v _setProximityGain `(uc ~T0 @X0 0 ef1`uc ]
+"241
+[v _setAmbientLightGain `(uc ~T0 @X0 0 ef1`uc ]
+"268
+[v _setProxIntLowThresh `(uc ~T0 @X0 0 ef1`uc ]
+"270
+[v _setProxIntHighThresh `(uc ~T0 @X0 0 ef1`uc ]
+"249
+[v _setLightIntLowThreshold `(uc ~T0 @X0 0 ef1`ui ]
+"251
+[v _setLightIntHighThreshold `(uc ~T0 @X0 0 ef1`ui ]
+"278
+[v _setGestureEnterThresh `(uc ~T0 @X0 0 ef1`uc ]
+"280
+[v _setGestureExitThresh `(uc ~T0 @X0 0 ef1`uc ]
+"245
+[v _setGestureGain `(uc ~T0 @X0 0 ef1`uc ]
+"237
+[v _setGestureLEDDrive `(uc ~T0 @X0 0 ef1`uc ]
+"284
+[v _setGestureWaitTime `(uc ~T0 @X0 0 ef1`uc ]
+"255
+[v _setGestureIntEnable `(uc ~T0 @X0 0 ef1`uc ]
+"222
+[v _getMode `(uc ~T0 @X0 0 ef ]
+"262
+[v _resetGestureParameters `(v ~T0 @X0 0 ef ]
+"274
+[v _setLEDBoost `(uc ~T0 @X0 0 ef1`uc ]
+"288
+[v _setGestureMode `(uc ~T0 @X0 0 ef1`uc ]
+"226
+[v _enablePower `(uc ~T0 @X0 0 ef ]
+"467 APDS9960.c
+[c E70 0 1 2 3 4 5 6 7 .. ]
+[n E70 . DIR_NONE DIR_LEFT DIR_RIGHT DIR_UP DIR_DOWN DIR_NEAR DIR_FAR DIR_ALL  ]
+[v F1257 `(v ~T0 @X0 1 tf1`ul ]
+"150 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic.h
+[v __delay `JF1257 ~T0 @X0 0 e ]
+[p i __delay ]
+"294 APDS9960.h
+[v _wireReadDataBlock `(i ~T0 @X0 0 ef3`uc`*uc`ui ]
+"263
+[v _processGestureData `(uc ~T0 @X0 0 ef ]
+"264
+[v _decodeGesture `(uc ~T0 @X0 0 ef ]
+"761 APDS9960.c
+[c E79 0 1 2 3 .. ]
+[n E79 . NA_STATE NEAR_STATE FAR_STATE ALL_STATE  ]
+"29 i2c.h
+[v _I2C_Start `(v ~T0 @X0 0 ef ]
+"34
+[v _I2C_Write_Byte `(v ~T0 @X0 0 ef1`uc ]
+"30
+[v _I2C_ReStart `(v ~T0 @X0 0 ef ]
+"35
+[v _I2C_Read_Byte `(uc ~T0 @X0 0 ef ]
+"33
+[v _I2C_Send_NACK `(v ~T0 @X0 0 ef ]
+"31
+[v _I2C_Stop `(v ~T0 @X0 0 ef ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;stddef.h: 2: typedef int ptrdiff_t;
+[; ;stddef.h: 3: typedef unsigned size_t;
+[; ;stddef.h: 4: typedef unsigned short wchar_t;
+[; ;stddef.h: 13: extern int errno;
+[; ;i2c.h: 27: void InitI2C(void);
+[; ;i2c.h: 28: unsigned char b_i2c_check_error_flag(void);
+[; ;i2c.h: 29: void I2C_Start(void);
+[; ;i2c.h: 30: void I2C_ReStart(void);
+[; ;i2c.h: 31: void I2C_Stop(void);
+[; ;i2c.h: 32: void I2C_Send_ACK(void);
+[; ;i2c.h: 33: void I2C_Send_NACK(void);
+[; ;i2c.h: 34: void I2C_Write_Byte(unsigned char);
+[; ;i2c.h: 35: unsigned char I2C_Read_Byte(void);
+[; ;lcd.h: 31: extern void lcd_initialize(void);
+[; ;lcd.h: 48: extern void lcd_clear(void);
+[; ;lcd.h: 65: extern void lcd_home(void);
+[; ;lcd.h: 82: extern void lcd_2ndline(void);
+[; ;lcd.h: 99: extern void lcd_goto(unsigned char uc_position);
+[; ;lcd.h: 116: extern void lcd_putchar(char c_data);
+[; ;lcd.h: 133: extern void lcd_putstr(const char* csz_string);
+[; ;lcd.h: 148: void lcd_bcd(unsigned char uc_digit, unsigned int ui_number);
+"187 APDS9960.h
+[v _b_i2c_error_flag `uc ~T0 @X0 1 e ]
+[i _b_i2c_error_flag
+-> -> 0 `i `uc
+]
+[; ;APDS9960.h: 187: unsigned char b_i2c_error_flag = 0;
+[; ;APDS9960.h: 189: enum {
+[; ;APDS9960.h: 190: DIR_NONE,
+[; ;APDS9960.h: 191: DIR_LEFT,
+[; ;APDS9960.h: 192: DIR_RIGHT,
+[; ;APDS9960.h: 193: DIR_UP,
+[; ;APDS9960.h: 194: DIR_DOWN,
+[; ;APDS9960.h: 195: DIR_NEAR,
+[; ;APDS9960.h: 196: DIR_FAR,
+[; ;APDS9960.h: 197: DIR_ALL
+[; ;APDS9960.h: 198: };
+[; ;APDS9960.h: 201: enum {
+[; ;APDS9960.h: 202: NA_STATE,
+[; ;APDS9960.h: 203: NEAR_STATE,
+[; ;APDS9960.h: 204: FAR_STATE,
+[; ;APDS9960.h: 205: ALL_STATE
+[; ;APDS9960.h: 206: };
+[; ;APDS9960.h: 209: typedef struct gesture_data_type {
+[; ;APDS9960.h: 210: uint8_t u_data[16];
+[; ;APDS9960.h: 211: uint8_t d_data[16];
+[; ;APDS9960.h: 212: uint8_t l_data[16];
+[; ;APDS9960.h: 213: uint8_t r_data[16];
+[; ;APDS9960.h: 214: uint8_t index;
+[; ;APDS9960.h: 215: uint8_t total_gestures;
+[; ;APDS9960.h: 216: uint8_t in_threshold;
+[; ;APDS9960.h: 217: uint8_t out_threshold;
+[; ;APDS9960.h: 218: } gesture_data_type;
+[; ;APDS9960.h: 221: bool initialize();
+[; ;APDS9960.h: 222: uint8_t getMode();
+[; ;APDS9960.h: 223: bool setMode(uint8_t mode, uint8_t enable);
+[; ;APDS9960.h: 226: bool enablePower();
+[; ;APDS9960.h: 227: bool disablePower();
+[; ;APDS9960.h: 230: bool enableGestureSensor(bool interrupts);
+[; ;APDS9960.h: 234: uint8_t getLEDDrive();
+[; ;APDS9960.h: 235: bool setLEDDrive(uint8_t drive);
+[; ;APDS9960.h: 236: uint8_t getGestureLEDDrive();
+[; ;APDS9960.h: 237: bool setGestureLEDDrive(uint8_t drive);
+[; ;APDS9960.h: 240: uint8_t getAmbientLightGain();
+[; ;APDS9960.h: 241: bool setAmbientLightGain(uint8_t gain);
+[; ;APDS9960.h: 242: uint8_t getProximityGain();
+[; ;APDS9960.h: 243: bool setProximityGain(uint8_t gain);
+[; ;APDS9960.h: 244: uint8_t getGestureGain();
+[; ;APDS9960.h: 245: bool setGestureGain(uint8_t gain);
+[; ;APDS9960.h: 249: bool setLightIntLowThreshold(uint16_t threshold);
+[; ;APDS9960.h: 251: bool setLightIntHighThreshold(uint16_t threshold);
+[; ;APDS9960.h: 254: uint8_t getGestureIntEnable();
+[; ;APDS9960.h: 255: bool setGestureIntEnable(uint8_t enable);
+[; ;APDS9960.h: 258: bool isGestureAvailable();
+[; ;APDS9960.h: 259: int readGesture();
+[; ;APDS9960.h: 262: void resetGestureParameters();
+[; ;APDS9960.h: 263: bool processGestureData();
+[; ;APDS9960.h: 264: bool decodeGesture();
+[; ;APDS9960.h: 268: bool setProxIntLowThresh(uint8_t threshold);
+[; ;APDS9960.h: 270: bool setProxIntHighThresh(uint8_t threshold);
+[; ;APDS9960.h: 273: uint8_t getLEDBoost();
+[; ;APDS9960.h: 274: bool setLEDBoost(uint8_t boost);
+[; ;APDS9960.h: 277: uint8_t getGestureEnterThresh();
+[; ;APDS9960.h: 278: bool setGestureEnterThresh(uint8_t threshold);
+[; ;APDS9960.h: 279: uint8_t getGestureExitThresh();
+[; ;APDS9960.h: 280: bool setGestureExitThresh(uint8_t threshold);
+[; ;APDS9960.h: 283: uint8_t getGestureWaitTime();
+[; ;APDS9960.h: 284: bool setGestureWaitTime(uint8_t time);
+[; ;APDS9960.h: 287: uint8_t getGestureMode();
+[; ;APDS9960.h: 288: bool setGestureMode(uint8_t mode);
+[; ;APDS9960.h: 291: int wireWriteByte(unsigned char);
+[; ;APDS9960.h: 292: int wireWriteDataByte(unsigned char , unsigned char );
+[; ;APDS9960.h: 293: unsigned char wireReadDataByte(unsigned char);
+[; ;APDS9960.h: 294: int wireReadDataBlock(uint8_t reg, uint8_t *val, unsigned int len);
+"298
+[v _gesture_data_ `S1 ~T0 @X0 1 e ]
+[; ;APDS9960.h: 298: gesture_data_type gesture_data_;
+"299
+[v _gesture_ud_delta_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 299: int gesture_ud_delta_;
+"300
+[v _gesture_lr_delta_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 300: int gesture_lr_delta_;
+"301
+[v _gesture_ud_count_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 301: int gesture_ud_count_;
+"302
+[v _gesture_lr_count_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 302: int gesture_lr_count_;
+"303
+[v _gesture_near_count_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 303: int gesture_near_count_;
+"304
+[v _gesture_far_count_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 304: int gesture_far_count_;
+"305
+[v _gesture_state_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 305: int gesture_state_;
+"306
+[v _gesture_motion_ `i ~T0 @X0 1 e ]
+[; ;APDS9960.h: 306: int gesture_motion_;
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;pic16f877a.h: 49: extern volatile unsigned char INDF @ 0x000;
+"51 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f877a.h
+[; ;pic16f877a.h: 51: asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+[; ;pic16f877a.h: 55: extern volatile unsigned char TMR0 @ 0x001;
+"57
+[; ;pic16f877a.h: 57: asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+[; ;pic16f877a.h: 61: extern volatile unsigned char PCL @ 0x002;
+"63
+[; ;pic16f877a.h: 63: asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+[; ;pic16f877a.h: 67: extern volatile unsigned char STATUS @ 0x003;
+"69
+[; ;pic16f877a.h: 69: asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+[; ;pic16f877a.h: 72: typedef union {
+[; ;pic16f877a.h: 73: struct {
+[; ;pic16f877a.h: 74: unsigned C :1;
+[; ;pic16f877a.h: 75: unsigned DC :1;
+[; ;pic16f877a.h: 76: unsigned Z :1;
+[; ;pic16f877a.h: 77: unsigned nPD :1;
+[; ;pic16f877a.h: 78: unsigned nTO :1;
+[; ;pic16f877a.h: 79: unsigned RP :2;
+[; ;pic16f877a.h: 80: unsigned IRP :1;
+[; ;pic16f877a.h: 81: };
+[; ;pic16f877a.h: 82: struct {
+[; ;pic16f877a.h: 83: unsigned :5;
+[; ;pic16f877a.h: 84: unsigned RP0 :1;
+[; ;pic16f877a.h: 85: unsigned RP1 :1;
+[; ;pic16f877a.h: 86: };
+[; ;pic16f877a.h: 87: struct {
+[; ;pic16f877a.h: 88: unsigned CARRY :1;
+[; ;pic16f877a.h: 89: };
+[; ;pic16f877a.h: 90: struct {
+[; ;pic16f877a.h: 91: unsigned :2;
+[; ;pic16f877a.h: 92: unsigned ZERO :1;
+[; ;pic16f877a.h: 93: };
+[; ;pic16f877a.h: 94: } STATUSbits_t;
+[; ;pic16f877a.h: 95: extern volatile STATUSbits_t STATUSbits @ 0x003;
+[; ;pic16f877a.h: 154: extern volatile unsigned char FSR @ 0x004;
+"156
+[; ;pic16f877a.h: 156: asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+[; ;pic16f877a.h: 160: extern volatile unsigned char PORTA @ 0x005;
+"162
+[; ;pic16f877a.h: 162: asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+[; ;pic16f877a.h: 165: typedef union {
+[; ;pic16f877a.h: 166: struct {
+[; ;pic16f877a.h: 167: unsigned RA0 :1;
+[; ;pic16f877a.h: 168: unsigned RA1 :1;
+[; ;pic16f877a.h: 169: unsigned RA2 :1;
+[; ;pic16f877a.h: 170: unsigned RA3 :1;
+[; ;pic16f877a.h: 171: unsigned RA4 :1;
+[; ;pic16f877a.h: 172: unsigned RA5 :1;
+[; ;pic16f877a.h: 173: };
+[; ;pic16f877a.h: 174: } PORTAbits_t;
+[; ;pic16f877a.h: 175: extern volatile PORTAbits_t PORTAbits @ 0x005;
+[; ;pic16f877a.h: 209: extern volatile unsigned char PORTB @ 0x006;
+"211
+[; ;pic16f877a.h: 211: asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+[; ;pic16f877a.h: 214: typedef union {
+[; ;pic16f877a.h: 215: struct {
+[; ;pic16f877a.h: 216: unsigned RB0 :1;
+[; ;pic16f877a.h: 217: unsigned RB1 :1;
+[; ;pic16f877a.h: 218: unsigned RB2 :1;
+[; ;pic16f877a.h: 219: unsigned RB3 :1;
+[; ;pic16f877a.h: 220: unsigned RB4 :1;
+[; ;pic16f877a.h: 221: unsigned RB5 :1;
+[; ;pic16f877a.h: 222: unsigned RB6 :1;
+[; ;pic16f877a.h: 223: unsigned RB7 :1;
+[; ;pic16f877a.h: 224: };
+[; ;pic16f877a.h: 225: } PORTBbits_t;
+[; ;pic16f877a.h: 226: extern volatile PORTBbits_t PORTBbits @ 0x006;
+[; ;pic16f877a.h: 270: extern volatile unsigned char PORTC @ 0x007;
+"272
+[; ;pic16f877a.h: 272: asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+[; ;pic16f877a.h: 275: typedef union {
+[; ;pic16f877a.h: 276: struct {
+[; ;pic16f877a.h: 277: unsigned RC0 :1;
+[; ;pic16f877a.h: 278: unsigned RC1 :1;
+[; ;pic16f877a.h: 279: unsigned RC2 :1;
+[; ;pic16f877a.h: 280: unsigned RC3 :1;
+[; ;pic16f877a.h: 281: unsigned RC4 :1;
+[; ;pic16f877a.h: 282: unsigned RC5 :1;
+[; ;pic16f877a.h: 283: unsigned RC6 :1;
+[; ;pic16f877a.h: 284: unsigned RC7 :1;
+[; ;pic16f877a.h: 285: };
+[; ;pic16f877a.h: 286: } PORTCbits_t;
+[; ;pic16f877a.h: 287: extern volatile PORTCbits_t PORTCbits @ 0x007;
+[; ;pic16f877a.h: 331: extern volatile unsigned char PORTD @ 0x008;
+"333
+[; ;pic16f877a.h: 333: asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+[; ;pic16f877a.h: 336: typedef union {
+[; ;pic16f877a.h: 337: struct {
+[; ;pic16f877a.h: 338: unsigned RD0 :1;
+[; ;pic16f877a.h: 339: unsigned RD1 :1;
+[; ;pic16f877a.h: 340: unsigned RD2 :1;
+[; ;pic16f877a.h: 341: unsigned RD3 :1;
+[; ;pic16f877a.h: 342: unsigned RD4 :1;
+[; ;pic16f877a.h: 343: unsigned RD5 :1;
+[; ;pic16f877a.h: 344: unsigned RD6 :1;
+[; ;pic16f877a.h: 345: unsigned RD7 :1;
+[; ;pic16f877a.h: 346: };
+[; ;pic16f877a.h: 347: } PORTDbits_t;
+[; ;pic16f877a.h: 348: extern volatile PORTDbits_t PORTDbits @ 0x008;
+[; ;pic16f877a.h: 392: extern volatile unsigned char PORTE @ 0x009;
+"394
+[; ;pic16f877a.h: 394: asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+[; ;pic16f877a.h: 397: typedef union {
+[; ;pic16f877a.h: 398: struct {
+[; ;pic16f877a.h: 399: unsigned RE0 :1;
+[; ;pic16f877a.h: 400: unsigned RE1 :1;
+[; ;pic16f877a.h: 401: unsigned RE2 :1;
+[; ;pic16f877a.h: 402: };
+[; ;pic16f877a.h: 403: } PORTEbits_t;
+[; ;pic16f877a.h: 404: extern volatile PORTEbits_t PORTEbits @ 0x009;
+[; ;pic16f877a.h: 423: extern volatile unsigned char PCLATH @ 0x00A;
+"425
+[; ;pic16f877a.h: 425: asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+[; ;pic16f877a.h: 428: typedef union {
+[; ;pic16f877a.h: 429: struct {
+[; ;pic16f877a.h: 430: unsigned PCLATH :5;
+[; ;pic16f877a.h: 431: };
+[; ;pic16f877a.h: 432: } PCLATHbits_t;
+[; ;pic16f877a.h: 433: extern volatile PCLATHbits_t PCLATHbits @ 0x00A;
+[; ;pic16f877a.h: 442: extern volatile unsigned char INTCON @ 0x00B;
+"444
+[; ;pic16f877a.h: 444: asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+[; ;pic16f877a.h: 447: typedef union {
+[; ;pic16f877a.h: 448: struct {
+[; ;pic16f877a.h: 449: unsigned RBIF :1;
+[; ;pic16f877a.h: 450: unsigned INTF :1;
+[; ;pic16f877a.h: 451: unsigned TMR0IF :1;
+[; ;pic16f877a.h: 452: unsigned RBIE :1;
+[; ;pic16f877a.h: 453: unsigned INTE :1;
+[; ;pic16f877a.h: 454: unsigned TMR0IE :1;
+[; ;pic16f877a.h: 455: unsigned PEIE :1;
+[; ;pic16f877a.h: 456: unsigned GIE :1;
+[; ;pic16f877a.h: 457: };
+[; ;pic16f877a.h: 458: struct {
+[; ;pic16f877a.h: 459: unsigned :2;
+[; ;pic16f877a.h: 460: unsigned T0IF :1;
+[; ;pic16f877a.h: 461: unsigned :2;
+[; ;pic16f877a.h: 462: unsigned T0IE :1;
+[; ;pic16f877a.h: 463: };
+[; ;pic16f877a.h: 464: } INTCONbits_t;
+[; ;pic16f877a.h: 465: extern volatile INTCONbits_t INTCONbits @ 0x00B;
+[; ;pic16f877a.h: 519: extern volatile unsigned char PIR1 @ 0x00C;
+"521
+[; ;pic16f877a.h: 521: asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+[; ;pic16f877a.h: 524: typedef union {
+[; ;pic16f877a.h: 525: struct {
+[; ;pic16f877a.h: 526: unsigned TMR1IF :1;
+[; ;pic16f877a.h: 527: unsigned TMR2IF :1;
+[; ;pic16f877a.h: 528: unsigned CCP1IF :1;
+[; ;pic16f877a.h: 529: unsigned SSPIF :1;
+[; ;pic16f877a.h: 530: unsigned TXIF :1;
+[; ;pic16f877a.h: 531: unsigned RCIF :1;
+[; ;pic16f877a.h: 532: unsigned ADIF :1;
+[; ;pic16f877a.h: 533: unsigned PSPIF :1;
+[; ;pic16f877a.h: 534: };
+[; ;pic16f877a.h: 535: } PIR1bits_t;
+[; ;pic16f877a.h: 536: extern volatile PIR1bits_t PIR1bits @ 0x00C;
+[; ;pic16f877a.h: 580: extern volatile unsigned char PIR2 @ 0x00D;
+"582
+[; ;pic16f877a.h: 582: asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+[; ;pic16f877a.h: 585: typedef union {
+[; ;pic16f877a.h: 586: struct {
+[; ;pic16f877a.h: 587: unsigned CCP2IF :1;
+[; ;pic16f877a.h: 588: unsigned :2;
+[; ;pic16f877a.h: 589: unsigned BCLIF :1;
+[; ;pic16f877a.h: 590: unsigned EEIF :1;
+[; ;pic16f877a.h: 591: unsigned :1;
+[; ;pic16f877a.h: 592: unsigned CMIF :1;
+[; ;pic16f877a.h: 593: };
+[; ;pic16f877a.h: 594: } PIR2bits_t;
+[; ;pic16f877a.h: 595: extern volatile PIR2bits_t PIR2bits @ 0x00D;
+[; ;pic16f877a.h: 619: extern volatile unsigned short TMR1 @ 0x00E;
+"621
+[; ;pic16f877a.h: 621: asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+[; ;pic16f877a.h: 625: extern volatile unsigned char TMR1L @ 0x00E;
+"627
+[; ;pic16f877a.h: 627: asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+[; ;pic16f877a.h: 631: extern volatile unsigned char TMR1H @ 0x00F;
+"633
+[; ;pic16f877a.h: 633: asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+[; ;pic16f877a.h: 637: extern volatile unsigned char T1CON @ 0x010;
+"639
+[; ;pic16f877a.h: 639: asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+[; ;pic16f877a.h: 642: typedef union {
+[; ;pic16f877a.h: 643: struct {
+[; ;pic16f877a.h: 644: unsigned TMR1ON :1;
+[; ;pic16f877a.h: 645: unsigned TMR1CS :1;
+[; ;pic16f877a.h: 646: unsigned nT1SYNC :1;
+[; ;pic16f877a.h: 647: unsigned T1OSCEN :1;
+[; ;pic16f877a.h: 648: unsigned T1CKPS :2;
+[; ;pic16f877a.h: 649: };
+[; ;pic16f877a.h: 650: struct {
+[; ;pic16f877a.h: 651: unsigned :2;
+[; ;pic16f877a.h: 652: unsigned T1SYNC :1;
+[; ;pic16f877a.h: 653: unsigned :1;
+[; ;pic16f877a.h: 654: unsigned T1CKPS0 :1;
+[; ;pic16f877a.h: 655: unsigned T1CKPS1 :1;
+[; ;pic16f877a.h: 656: };
+[; ;pic16f877a.h: 657: struct {
+[; ;pic16f877a.h: 658: unsigned :2;
+[; ;pic16f877a.h: 659: unsigned T1INSYNC :1;
+[; ;pic16f877a.h: 660: };
+[; ;pic16f877a.h: 661: } T1CONbits_t;
+[; ;pic16f877a.h: 662: extern volatile T1CONbits_t T1CONbits @ 0x010;
+[; ;pic16f877a.h: 711: extern volatile unsigned char TMR2 @ 0x011;
+"713
+[; ;pic16f877a.h: 713: asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+[; ;pic16f877a.h: 717: extern volatile unsigned char T2CON @ 0x012;
+"719
+[; ;pic16f877a.h: 719: asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+[; ;pic16f877a.h: 722: typedef union {
+[; ;pic16f877a.h: 723: struct {
+[; ;pic16f877a.h: 724: unsigned T2CKPS :2;
+[; ;pic16f877a.h: 725: unsigned TMR2ON :1;
+[; ;pic16f877a.h: 726: unsigned TOUTPS :4;
+[; ;pic16f877a.h: 727: };
+[; ;pic16f877a.h: 728: struct {
+[; ;pic16f877a.h: 729: unsigned T2CKPS0 :1;
+[; ;pic16f877a.h: 730: unsigned T2CKPS1 :1;
+[; ;pic16f877a.h: 731: unsigned :1;
+[; ;pic16f877a.h: 732: unsigned TOUTPS0 :1;
+[; ;pic16f877a.h: 733: unsigned TOUTPS1 :1;
+[; ;pic16f877a.h: 734: unsigned TOUTPS2 :1;
+[; ;pic16f877a.h: 735: unsigned TOUTPS3 :1;
+[; ;pic16f877a.h: 736: };
+[; ;pic16f877a.h: 737: } T2CONbits_t;
+[; ;pic16f877a.h: 738: extern volatile T2CONbits_t T2CONbits @ 0x012;
+[; ;pic16f877a.h: 787: extern volatile unsigned char SSPBUF @ 0x013;
+"789
+[; ;pic16f877a.h: 789: asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+[; ;pic16f877a.h: 793: extern volatile unsigned char SSPCON @ 0x014;
+"795
+[; ;pic16f877a.h: 795: asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+[; ;pic16f877a.h: 798: typedef union {
+[; ;pic16f877a.h: 799: struct {
+[; ;pic16f877a.h: 800: unsigned SSPM :4;
+[; ;pic16f877a.h: 801: unsigned CKP :1;
+[; ;pic16f877a.h: 802: unsigned SSPEN :1;
+[; ;pic16f877a.h: 803: unsigned SSPOV :1;
+[; ;pic16f877a.h: 804: unsigned WCOL :1;
+[; ;pic16f877a.h: 805: };
+[; ;pic16f877a.h: 806: struct {
+[; ;pic16f877a.h: 807: unsigned SSPM0 :1;
+[; ;pic16f877a.h: 808: unsigned SSPM1 :1;
+[; ;pic16f877a.h: 809: unsigned SSPM2 :1;
+[; ;pic16f877a.h: 810: unsigned SSPM3 :1;
+[; ;pic16f877a.h: 811: };
+[; ;pic16f877a.h: 812: } SSPCONbits_t;
+[; ;pic16f877a.h: 813: extern volatile SSPCONbits_t SSPCONbits @ 0x014;
+[; ;pic16f877a.h: 862: extern volatile unsigned short CCPR1 @ 0x015;
+"864
+[; ;pic16f877a.h: 864: asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+[; ;pic16f877a.h: 868: extern volatile unsigned char CCPR1L @ 0x015;
+"870
+[; ;pic16f877a.h: 870: asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+[; ;pic16f877a.h: 874: extern volatile unsigned char CCPR1H @ 0x016;
+"876
+[; ;pic16f877a.h: 876: asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+[; ;pic16f877a.h: 880: extern volatile unsigned char CCP1CON @ 0x017;
+"882
+[; ;pic16f877a.h: 882: asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+[; ;pic16f877a.h: 885: typedef union {
+[; ;pic16f877a.h: 886: struct {
+[; ;pic16f877a.h: 887: unsigned CCP1M :4;
+[; ;pic16f877a.h: 888: unsigned CCP1Y :1;
+[; ;pic16f877a.h: 889: unsigned CCP1X :1;
+[; ;pic16f877a.h: 890: };
+[; ;pic16f877a.h: 891: struct {
+[; ;pic16f877a.h: 892: unsigned CCP1M0 :1;
+[; ;pic16f877a.h: 893: unsigned CCP1M1 :1;
+[; ;pic16f877a.h: 894: unsigned CCP1M2 :1;
+[; ;pic16f877a.h: 895: unsigned CCP1M3 :1;
+[; ;pic16f877a.h: 896: };
+[; ;pic16f877a.h: 897: } CCP1CONbits_t;
+[; ;pic16f877a.h: 898: extern volatile CCP1CONbits_t CCP1CONbits @ 0x017;
+[; ;pic16f877a.h: 937: extern volatile unsigned char RCSTA @ 0x018;
+"939
+[; ;pic16f877a.h: 939: asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+[; ;pic16f877a.h: 942: typedef union {
+[; ;pic16f877a.h: 943: struct {
+[; ;pic16f877a.h: 944: unsigned RX9D :1;
+[; ;pic16f877a.h: 945: unsigned OERR :1;
+[; ;pic16f877a.h: 946: unsigned FERR :1;
+[; ;pic16f877a.h: 947: unsigned ADDEN :1;
+[; ;pic16f877a.h: 948: unsigned CREN :1;
+[; ;pic16f877a.h: 949: unsigned SREN :1;
+[; ;pic16f877a.h: 950: unsigned RX9 :1;
+[; ;pic16f877a.h: 951: unsigned SPEN :1;
+[; ;pic16f877a.h: 952: };
+[; ;pic16f877a.h: 953: struct {
+[; ;pic16f877a.h: 954: unsigned RCD8 :1;
+[; ;pic16f877a.h: 955: unsigned :5;
+[; ;pic16f877a.h: 956: unsigned RC9 :1;
+[; ;pic16f877a.h: 957: };
+[; ;pic16f877a.h: 958: struct {
+[; ;pic16f877a.h: 959: unsigned :6;
+[; ;pic16f877a.h: 960: unsigned nRC8 :1;
+[; ;pic16f877a.h: 961: };
+[; ;pic16f877a.h: 962: struct {
+[; ;pic16f877a.h: 963: unsigned :6;
+[; ;pic16f877a.h: 964: unsigned RC8_9 :1;
+[; ;pic16f877a.h: 965: };
+[; ;pic16f877a.h: 966: } RCSTAbits_t;
+[; ;pic16f877a.h: 967: extern volatile RCSTAbits_t RCSTAbits @ 0x018;
+[; ;pic16f877a.h: 1031: extern volatile unsigned char TXREG @ 0x019;
+"1033
+[; ;pic16f877a.h: 1033: asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+[; ;pic16f877a.h: 1037: extern volatile unsigned char RCREG @ 0x01A;
+"1039
+[; ;pic16f877a.h: 1039: asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+[; ;pic16f877a.h: 1043: extern volatile unsigned short CCPR2 @ 0x01B;
+"1045
+[; ;pic16f877a.h: 1045: asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+[; ;pic16f877a.h: 1049: extern volatile unsigned char CCPR2L @ 0x01B;
+"1051
+[; ;pic16f877a.h: 1051: asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+[; ;pic16f877a.h: 1055: extern volatile unsigned char CCPR2H @ 0x01C;
+"1057
+[; ;pic16f877a.h: 1057: asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+[; ;pic16f877a.h: 1061: extern volatile unsigned char CCP2CON @ 0x01D;
+"1063
+[; ;pic16f877a.h: 1063: asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+[; ;pic16f877a.h: 1066: typedef union {
+[; ;pic16f877a.h: 1067: struct {
+[; ;pic16f877a.h: 1068: unsigned CCP2M :4;
+[; ;pic16f877a.h: 1069: unsigned CCP2Y :1;
+[; ;pic16f877a.h: 1070: unsigned CCP2X :1;
+[; ;pic16f877a.h: 1071: };
+[; ;pic16f877a.h: 1072: struct {
+[; ;pic16f877a.h: 1073: unsigned CCP2M0 :1;
+[; ;pic16f877a.h: 1074: unsigned CCP2M1 :1;
+[; ;pic16f877a.h: 1075: unsigned CCP2M2 :1;
+[; ;pic16f877a.h: 1076: unsigned CCP2M3 :1;
+[; ;pic16f877a.h: 1077: };
+[; ;pic16f877a.h: 1078: } CCP2CONbits_t;
+[; ;pic16f877a.h: 1079: extern volatile CCP2CONbits_t CCP2CONbits @ 0x01D;
+[; ;pic16f877a.h: 1118: extern volatile unsigned char ADRESH @ 0x01E;
+"1120
+[; ;pic16f877a.h: 1120: asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+[; ;pic16f877a.h: 1124: extern volatile unsigned char ADCON0 @ 0x01F;
+"1126
+[; ;pic16f877a.h: 1126: asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+[; ;pic16f877a.h: 1129: typedef union {
+[; ;pic16f877a.h: 1130: struct {
+[; ;pic16f877a.h: 1131: unsigned ADON :1;
+[; ;pic16f877a.h: 1132: unsigned :1;
+[; ;pic16f877a.h: 1133: unsigned GO_nDONE :1;
+[; ;pic16f877a.h: 1134: unsigned CHS :3;
+[; ;pic16f877a.h: 1135: unsigned ADCS :2;
+[; ;pic16f877a.h: 1136: };
+[; ;pic16f877a.h: 1137: struct {
+[; ;pic16f877a.h: 1138: unsigned :2;
+[; ;pic16f877a.h: 1139: unsigned GO :1;
+[; ;pic16f877a.h: 1140: unsigned CHS0 :1;
+[; ;pic16f877a.h: 1141: unsigned CHS1 :1;
+[; ;pic16f877a.h: 1142: unsigned CHS2 :1;
+[; ;pic16f877a.h: 1143: unsigned ADCS0 :1;
+[; ;pic16f877a.h: 1144: unsigned ADCS1 :1;
+[; ;pic16f877a.h: 1145: };
+[; ;pic16f877a.h: 1146: struct {
+[; ;pic16f877a.h: 1147: unsigned :2;
+[; ;pic16f877a.h: 1148: unsigned nDONE :1;
+[; ;pic16f877a.h: 1149: };
+[; ;pic16f877a.h: 1150: struct {
+[; ;pic16f877a.h: 1151: unsigned :2;
+[; ;pic16f877a.h: 1152: unsigned GO_DONE :1;
+[; ;pic16f877a.h: 1153: };
+[; ;pic16f877a.h: 1154: } ADCON0bits_t;
+[; ;pic16f877a.h: 1155: extern volatile ADCON0bits_t ADCON0bits @ 0x01F;
+[; ;pic16f877a.h: 1219: extern volatile unsigned char OPTION_REG @ 0x081;
+"1221
+[; ;pic16f877a.h: 1221: asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+[; ;pic16f877a.h: 1224: typedef union {
+[; ;pic16f877a.h: 1225: struct {
+[; ;pic16f877a.h: 1226: unsigned PS :3;
+[; ;pic16f877a.h: 1227: unsigned PSA :1;
+[; ;pic16f877a.h: 1228: unsigned T0SE :1;
+[; ;pic16f877a.h: 1229: unsigned T0CS :1;
+[; ;pic16f877a.h: 1230: unsigned INTEDG :1;
+[; ;pic16f877a.h: 1231: unsigned nRBPU :1;
+[; ;pic16f877a.h: 1232: };
+[; ;pic16f877a.h: 1233: struct {
+[; ;pic16f877a.h: 1234: unsigned PS0 :1;
+[; ;pic16f877a.h: 1235: unsigned PS1 :1;
+[; ;pic16f877a.h: 1236: unsigned PS2 :1;
+[; ;pic16f877a.h: 1237: };
+[; ;pic16f877a.h: 1238: } OPTION_REGbits_t;
+[; ;pic16f877a.h: 1239: extern volatile OPTION_REGbits_t OPTION_REGbits @ 0x081;
+[; ;pic16f877a.h: 1288: extern volatile unsigned char TRISA @ 0x085;
+"1290
+[; ;pic16f877a.h: 1290: asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+[; ;pic16f877a.h: 1293: typedef union {
+[; ;pic16f877a.h: 1294: struct {
+[; ;pic16f877a.h: 1295: unsigned TRISA0 :1;
+[; ;pic16f877a.h: 1296: unsigned TRISA1 :1;
+[; ;pic16f877a.h: 1297: unsigned TRISA2 :1;
+[; ;pic16f877a.h: 1298: unsigned TRISA3 :1;
+[; ;pic16f877a.h: 1299: unsigned TRISA4 :1;
+[; ;pic16f877a.h: 1300: unsigned TRISA5 :1;
+[; ;pic16f877a.h: 1301: };
+[; ;pic16f877a.h: 1302: } TRISAbits_t;
+[; ;pic16f877a.h: 1303: extern volatile TRISAbits_t TRISAbits @ 0x085;
+[; ;pic16f877a.h: 1337: extern volatile unsigned char TRISB @ 0x086;
+"1339
+[; ;pic16f877a.h: 1339: asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+[; ;pic16f877a.h: 1342: typedef union {
+[; ;pic16f877a.h: 1343: struct {
+[; ;pic16f877a.h: 1344: unsigned TRISB0 :1;
+[; ;pic16f877a.h: 1345: unsigned TRISB1 :1;
+[; ;pic16f877a.h: 1346: unsigned TRISB2 :1;
+[; ;pic16f877a.h: 1347: unsigned TRISB3 :1;
+[; ;pic16f877a.h: 1348: unsigned TRISB4 :1;
+[; ;pic16f877a.h: 1349: unsigned TRISB5 :1;
+[; ;pic16f877a.h: 1350: unsigned TRISB6 :1;
+[; ;pic16f877a.h: 1351: unsigned TRISB7 :1;
+[; ;pic16f877a.h: 1352: };
+[; ;pic16f877a.h: 1353: } TRISBbits_t;
+[; ;pic16f877a.h: 1354: extern volatile TRISBbits_t TRISBbits @ 0x086;
+[; ;pic16f877a.h: 1398: extern volatile unsigned char TRISC @ 0x087;
+"1400
+[; ;pic16f877a.h: 1400: asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+[; ;pic16f877a.h: 1403: typedef union {
+[; ;pic16f877a.h: 1404: struct {
+[; ;pic16f877a.h: 1405: unsigned TRISC0 :1;
+[; ;pic16f877a.h: 1406: unsigned TRISC1 :1;
+[; ;pic16f877a.h: 1407: unsigned TRISC2 :1;
+[; ;pic16f877a.h: 1408: unsigned TRISC3 :1;
+[; ;pic16f877a.h: 1409: unsigned TRISC4 :1;
+[; ;pic16f877a.h: 1410: unsigned TRISC5 :1;
+[; ;pic16f877a.h: 1411: unsigned TRISC6 :1;
+[; ;pic16f877a.h: 1412: unsigned TRISC7 :1;
+[; ;pic16f877a.h: 1413: };
+[; ;pic16f877a.h: 1414: } TRISCbits_t;
+[; ;pic16f877a.h: 1415: extern volatile TRISCbits_t TRISCbits @ 0x087;
+[; ;pic16f877a.h: 1459: extern volatile unsigned char TRISD @ 0x088;
+"1461
+[; ;pic16f877a.h: 1461: asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+[; ;pic16f877a.h: 1464: typedef union {
+[; ;pic16f877a.h: 1465: struct {
+[; ;pic16f877a.h: 1466: unsigned TRISD0 :1;
+[; ;pic16f877a.h: 1467: unsigned TRISD1 :1;
+[; ;pic16f877a.h: 1468: unsigned TRISD2 :1;
+[; ;pic16f877a.h: 1469: unsigned TRISD3 :1;
+[; ;pic16f877a.h: 1470: unsigned TRISD4 :1;
+[; ;pic16f877a.h: 1471: unsigned TRISD5 :1;
+[; ;pic16f877a.h: 1472: unsigned TRISD6 :1;
+[; ;pic16f877a.h: 1473: unsigned TRISD7 :1;
+[; ;pic16f877a.h: 1474: };
+[; ;pic16f877a.h: 1475: } TRISDbits_t;
+[; ;pic16f877a.h: 1476: extern volatile TRISDbits_t TRISDbits @ 0x088;
+[; ;pic16f877a.h: 1520: extern volatile unsigned char TRISE @ 0x089;
+"1522
+[; ;pic16f877a.h: 1522: asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+[; ;pic16f877a.h: 1525: typedef union {
+[; ;pic16f877a.h: 1526: struct {
+[; ;pic16f877a.h: 1527: unsigned TRISE0 :1;
+[; ;pic16f877a.h: 1528: unsigned TRISE1 :1;
+[; ;pic16f877a.h: 1529: unsigned TRISE2 :1;
+[; ;pic16f877a.h: 1530: unsigned :1;
+[; ;pic16f877a.h: 1531: unsigned PSPMODE :1;
+[; ;pic16f877a.h: 1532: unsigned IBOV :1;
+[; ;pic16f877a.h: 1533: unsigned OBF :1;
+[; ;pic16f877a.h: 1534: unsigned IBF :1;
+[; ;pic16f877a.h: 1535: };
+[; ;pic16f877a.h: 1536: } TRISEbits_t;
+[; ;pic16f877a.h: 1537: extern volatile TRISEbits_t TRISEbits @ 0x089;
+[; ;pic16f877a.h: 1576: extern volatile unsigned char PIE1 @ 0x08C;
+"1578
+[; ;pic16f877a.h: 1578: asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+[; ;pic16f877a.h: 1581: typedef union {
+[; ;pic16f877a.h: 1582: struct {
+[; ;pic16f877a.h: 1583: unsigned TMR1IE :1;
+[; ;pic16f877a.h: 1584: unsigned TMR2IE :1;
+[; ;pic16f877a.h: 1585: unsigned CCP1IE :1;
+[; ;pic16f877a.h: 1586: unsigned SSPIE :1;
+[; ;pic16f877a.h: 1587: unsigned TXIE :1;
+[; ;pic16f877a.h: 1588: unsigned RCIE :1;
+[; ;pic16f877a.h: 1589: unsigned ADIE :1;
+[; ;pic16f877a.h: 1590: unsigned PSPIE :1;
+[; ;pic16f877a.h: 1591: };
+[; ;pic16f877a.h: 1592: } PIE1bits_t;
+[; ;pic16f877a.h: 1593: extern volatile PIE1bits_t PIE1bits @ 0x08C;
+[; ;pic16f877a.h: 1637: extern volatile unsigned char PIE2 @ 0x08D;
+"1639
+[; ;pic16f877a.h: 1639: asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+[; ;pic16f877a.h: 1642: typedef union {
+[; ;pic16f877a.h: 1643: struct {
+[; ;pic16f877a.h: 1644: unsigned CCP2IE :1;
+[; ;pic16f877a.h: 1645: unsigned :2;
+[; ;pic16f877a.h: 1646: unsigned BCLIE :1;
+[; ;pic16f877a.h: 1647: unsigned EEIE :1;
+[; ;pic16f877a.h: 1648: unsigned :1;
+[; ;pic16f877a.h: 1649: unsigned CMIE :1;
+[; ;pic16f877a.h: 1650: };
+[; ;pic16f877a.h: 1651: } PIE2bits_t;
+[; ;pic16f877a.h: 1652: extern volatile PIE2bits_t PIE2bits @ 0x08D;
+[; ;pic16f877a.h: 1676: extern volatile unsigned char PCON @ 0x08E;
+"1678
+[; ;pic16f877a.h: 1678: asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+[; ;pic16f877a.h: 1681: typedef union {
+[; ;pic16f877a.h: 1682: struct {
+[; ;pic16f877a.h: 1683: unsigned nBOR :1;
+[; ;pic16f877a.h: 1684: unsigned nPOR :1;
+[; ;pic16f877a.h: 1685: };
+[; ;pic16f877a.h: 1686: struct {
+[; ;pic16f877a.h: 1687: unsigned nBO :1;
+[; ;pic16f877a.h: 1688: };
+[; ;pic16f877a.h: 1689: } PCONbits_t;
+[; ;pic16f877a.h: 1690: extern volatile PCONbits_t PCONbits @ 0x08E;
+[; ;pic16f877a.h: 1709: extern volatile unsigned char SSPCON2 @ 0x091;
+"1711
+[; ;pic16f877a.h: 1711: asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+[; ;pic16f877a.h: 1714: typedef union {
+[; ;pic16f877a.h: 1715: struct {
+[; ;pic16f877a.h: 1716: unsigned SEN :1;
+[; ;pic16f877a.h: 1717: unsigned RSEN :1;
+[; ;pic16f877a.h: 1718: unsigned PEN :1;
+[; ;pic16f877a.h: 1719: unsigned RCEN :1;
+[; ;pic16f877a.h: 1720: unsigned ACKEN :1;
+[; ;pic16f877a.h: 1721: unsigned ACKDT :1;
+[; ;pic16f877a.h: 1722: unsigned ACKSTAT :1;
+[; ;pic16f877a.h: 1723: unsigned GCEN :1;
+[; ;pic16f877a.h: 1724: };
+[; ;pic16f877a.h: 1725: } SSPCON2bits_t;
+[; ;pic16f877a.h: 1726: extern volatile SSPCON2bits_t SSPCON2bits @ 0x091;
+[; ;pic16f877a.h: 1770: extern volatile unsigned char PR2 @ 0x092;
+"1772
+[; ;pic16f877a.h: 1772: asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+[; ;pic16f877a.h: 1776: extern volatile unsigned char SSPADD @ 0x093;
+"1778
+[; ;pic16f877a.h: 1778: asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+[; ;pic16f877a.h: 1782: extern volatile unsigned char SSPSTAT @ 0x094;
+"1784
+[; ;pic16f877a.h: 1784: asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+[; ;pic16f877a.h: 1787: typedef union {
+[; ;pic16f877a.h: 1788: struct {
+[; ;pic16f877a.h: 1789: unsigned BF :1;
+[; ;pic16f877a.h: 1790: unsigned UA :1;
+[; ;pic16f877a.h: 1791: unsigned R_nW :1;
+[; ;pic16f877a.h: 1792: unsigned S :1;
+[; ;pic16f877a.h: 1793: unsigned P :1;
+[; ;pic16f877a.h: 1794: unsigned D_nA :1;
+[; ;pic16f877a.h: 1795: unsigned CKE :1;
+[; ;pic16f877a.h: 1796: unsigned SMP :1;
+[; ;pic16f877a.h: 1797: };
+[; ;pic16f877a.h: 1798: struct {
+[; ;pic16f877a.h: 1799: unsigned :2;
+[; ;pic16f877a.h: 1800: unsigned R :1;
+[; ;pic16f877a.h: 1801: unsigned :2;
+[; ;pic16f877a.h: 1802: unsigned D :1;
+[; ;pic16f877a.h: 1803: };
+[; ;pic16f877a.h: 1804: struct {
+[; ;pic16f877a.h: 1805: unsigned :2;
+[; ;pic16f877a.h: 1806: unsigned I2C_READ :1;
+[; ;pic16f877a.h: 1807: unsigned I2C_START :1;
+[; ;pic16f877a.h: 1808: unsigned I2C_STOP :1;
+[; ;pic16f877a.h: 1809: unsigned I2C_DATA :1;
+[; ;pic16f877a.h: 1810: };
+[; ;pic16f877a.h: 1811: struct {
+[; ;pic16f877a.h: 1812: unsigned :2;
+[; ;pic16f877a.h: 1813: unsigned nW :1;
+[; ;pic16f877a.h: 1814: unsigned :2;
+[; ;pic16f877a.h: 1815: unsigned nA :1;
+[; ;pic16f877a.h: 1816: };
+[; ;pic16f877a.h: 1817: struct {
+[; ;pic16f877a.h: 1818: unsigned :2;
+[; ;pic16f877a.h: 1819: unsigned nWRITE :1;
+[; ;pic16f877a.h: 1820: unsigned :2;
+[; ;pic16f877a.h: 1821: unsigned nADDRESS :1;
+[; ;pic16f877a.h: 1822: };
+[; ;pic16f877a.h: 1823: struct {
+[; ;pic16f877a.h: 1824: unsigned :2;
+[; ;pic16f877a.h: 1825: unsigned R_W :1;
+[; ;pic16f877a.h: 1826: unsigned :2;
+[; ;pic16f877a.h: 1827: unsigned D_A :1;
+[; ;pic16f877a.h: 1828: };
+[; ;pic16f877a.h: 1829: struct {
+[; ;pic16f877a.h: 1830: unsigned :2;
+[; ;pic16f877a.h: 1831: unsigned READ_WRITE :1;
+[; ;pic16f877a.h: 1832: unsigned :2;
+[; ;pic16f877a.h: 1833: unsigned DATA_ADDRESS :1;
+[; ;pic16f877a.h: 1834: };
+[; ;pic16f877a.h: 1835: } SSPSTATbits_t;
+[; ;pic16f877a.h: 1836: extern volatile SSPSTATbits_t SSPSTATbits @ 0x094;
+[; ;pic16f877a.h: 1950: extern volatile unsigned char TXSTA @ 0x098;
+"1952
+[; ;pic16f877a.h: 1952: asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+[; ;pic16f877a.h: 1955: typedef union {
+[; ;pic16f877a.h: 1956: struct {
+[; ;pic16f877a.h: 1957: unsigned TX9D :1;
+[; ;pic16f877a.h: 1958: unsigned TRMT :1;
+[; ;pic16f877a.h: 1959: unsigned BRGH :1;
+[; ;pic16f877a.h: 1960: unsigned :1;
+[; ;pic16f877a.h: 1961: unsigned SYNC :1;
+[; ;pic16f877a.h: 1962: unsigned TXEN :1;
+[; ;pic16f877a.h: 1963: unsigned TX9 :1;
+[; ;pic16f877a.h: 1964: unsigned CSRC :1;
+[; ;pic16f877a.h: 1965: };
+[; ;pic16f877a.h: 1966: struct {
+[; ;pic16f877a.h: 1967: unsigned TXD8 :1;
+[; ;pic16f877a.h: 1968: unsigned :5;
+[; ;pic16f877a.h: 1969: unsigned nTX8 :1;
+[; ;pic16f877a.h: 1970: };
+[; ;pic16f877a.h: 1971: struct {
+[; ;pic16f877a.h: 1972: unsigned :6;
+[; ;pic16f877a.h: 1973: unsigned TX8_9 :1;
+[; ;pic16f877a.h: 1974: };
+[; ;pic16f877a.h: 1975: } TXSTAbits_t;
+[; ;pic16f877a.h: 1976: extern volatile TXSTAbits_t TXSTAbits @ 0x098;
+[; ;pic16f877a.h: 2030: extern volatile unsigned char SPBRG @ 0x099;
+"2032
+[; ;pic16f877a.h: 2032: asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+[; ;pic16f877a.h: 2036: extern volatile unsigned char CMCON @ 0x09C;
+"2038
+[; ;pic16f877a.h: 2038: asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+[; ;pic16f877a.h: 2041: typedef union {
+[; ;pic16f877a.h: 2042: struct {
+[; ;pic16f877a.h: 2043: unsigned CM :3;
+[; ;pic16f877a.h: 2044: unsigned CIS :1;
+[; ;pic16f877a.h: 2045: unsigned C1INV :1;
+[; ;pic16f877a.h: 2046: unsigned C2INV :1;
+[; ;pic16f877a.h: 2047: unsigned C1OUT :1;
+[; ;pic16f877a.h: 2048: unsigned C2OUT :1;
+[; ;pic16f877a.h: 2049: };
+[; ;pic16f877a.h: 2050: struct {
+[; ;pic16f877a.h: 2051: unsigned CM0 :1;
+[; ;pic16f877a.h: 2052: unsigned CM1 :1;
+[; ;pic16f877a.h: 2053: unsigned CM2 :1;
+[; ;pic16f877a.h: 2054: };
+[; ;pic16f877a.h: 2055: } CMCONbits_t;
+[; ;pic16f877a.h: 2056: extern volatile CMCONbits_t CMCONbits @ 0x09C;
+[; ;pic16f877a.h: 2105: extern volatile unsigned char CVRCON @ 0x09D;
+"2107
+[; ;pic16f877a.h: 2107: asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+[; ;pic16f877a.h: 2110: typedef union {
+[; ;pic16f877a.h: 2111: struct {
+[; ;pic16f877a.h: 2112: unsigned CVR :4;
+[; ;pic16f877a.h: 2113: unsigned :1;
+[; ;pic16f877a.h: 2114: unsigned CVRR :1;
+[; ;pic16f877a.h: 2115: unsigned CVROE :1;
+[; ;pic16f877a.h: 2116: unsigned CVREN :1;
+[; ;pic16f877a.h: 2117: };
+[; ;pic16f877a.h: 2118: struct {
+[; ;pic16f877a.h: 2119: unsigned CVR0 :1;
+[; ;pic16f877a.h: 2120: unsigned CVR1 :1;
+[; ;pic16f877a.h: 2121: unsigned CVR2 :1;
+[; ;pic16f877a.h: 2122: unsigned CVR3 :1;
+[; ;pic16f877a.h: 2123: };
+[; ;pic16f877a.h: 2124: } CVRCONbits_t;
+[; ;pic16f877a.h: 2125: extern volatile CVRCONbits_t CVRCONbits @ 0x09D;
+[; ;pic16f877a.h: 2169: extern volatile unsigned char ADRESL @ 0x09E;
+"2171
+[; ;pic16f877a.h: 2171: asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+[; ;pic16f877a.h: 2175: extern volatile unsigned char ADCON1 @ 0x09F;
+"2177
+[; ;pic16f877a.h: 2177: asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+[; ;pic16f877a.h: 2180: typedef union {
+[; ;pic16f877a.h: 2181: struct {
+[; ;pic16f877a.h: 2182: unsigned PCFG :4;
+[; ;pic16f877a.h: 2183: unsigned :2;
+[; ;pic16f877a.h: 2184: unsigned ADCS2 :1;
+[; ;pic16f877a.h: 2185: unsigned ADFM :1;
+[; ;pic16f877a.h: 2186: };
+[; ;pic16f877a.h: 2187: struct {
+[; ;pic16f877a.h: 2188: unsigned PCFG0 :1;
+[; ;pic16f877a.h: 2189: unsigned PCFG1 :1;
+[; ;pic16f877a.h: 2190: unsigned PCFG2 :1;
+[; ;pic16f877a.h: 2191: unsigned PCFG3 :1;
+[; ;pic16f877a.h: 2192: };
+[; ;pic16f877a.h: 2193: } ADCON1bits_t;
+[; ;pic16f877a.h: 2194: extern volatile ADCON1bits_t ADCON1bits @ 0x09F;
+[; ;pic16f877a.h: 2233: extern volatile unsigned char EEDATA @ 0x10C;
+"2235
+[; ;pic16f877a.h: 2235: asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+[; ;pic16f877a.h: 2239: extern volatile unsigned char EEADR @ 0x10D;
+"2241
+[; ;pic16f877a.h: 2241: asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+[; ;pic16f877a.h: 2245: extern volatile unsigned char EEDATH @ 0x10E;
+"2247
+[; ;pic16f877a.h: 2247: asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+[; ;pic16f877a.h: 2251: extern volatile unsigned char EEADRH @ 0x10F;
+"2253
+[; ;pic16f877a.h: 2253: asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+[; ;pic16f877a.h: 2257: extern volatile unsigned char EECON1 @ 0x18C;
+"2259
+[; ;pic16f877a.h: 2259: asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+[; ;pic16f877a.h: 2262: typedef union {
+[; ;pic16f877a.h: 2263: struct {
+[; ;pic16f877a.h: 2264: unsigned RD :1;
+[; ;pic16f877a.h: 2265: unsigned WR :1;
+[; ;pic16f877a.h: 2266: unsigned WREN :1;
+[; ;pic16f877a.h: 2267: unsigned WRERR :1;
+[; ;pic16f877a.h: 2268: unsigned :3;
+[; ;pic16f877a.h: 2269: unsigned EEPGD :1;
+[; ;pic16f877a.h: 2270: };
+[; ;pic16f877a.h: 2271: } EECON1bits_t;
+[; ;pic16f877a.h: 2272: extern volatile EECON1bits_t EECON1bits @ 0x18C;
+[; ;pic16f877a.h: 2301: extern volatile unsigned char EECON2 @ 0x18D;
+"2303
+[; ;pic16f877a.h: 2303: asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+[; ;pic16f877a.h: 2313: extern volatile __bit ACKDT @ (((unsigned) &SSPCON2)*8) + 5;
+[; ;pic16f877a.h: 2315: extern volatile __bit ACKEN @ (((unsigned) &SSPCON2)*8) + 4;
+[; ;pic16f877a.h: 2317: extern volatile __bit ACKSTAT @ (((unsigned) &SSPCON2)*8) + 6;
+[; ;pic16f877a.h: 2319: extern volatile __bit ADCS0 @ (((unsigned) &ADCON0)*8) + 6;
+[; ;pic16f877a.h: 2321: extern volatile __bit ADCS1 @ (((unsigned) &ADCON0)*8) + 7;
+[; ;pic16f877a.h: 2323: extern volatile __bit ADCS2 @ (((unsigned) &ADCON1)*8) + 6;
+[; ;pic16f877a.h: 2325: extern volatile __bit ADDEN @ (((unsigned) &RCSTA)*8) + 3;
+[; ;pic16f877a.h: 2327: extern volatile __bit ADFM @ (((unsigned) &ADCON1)*8) + 7;
+[; ;pic16f877a.h: 2329: extern volatile __bit ADIE @ (((unsigned) &PIE1)*8) + 6;
+[; ;pic16f877a.h: 2331: extern volatile __bit ADIF @ (((unsigned) &PIR1)*8) + 6;
+[; ;pic16f877a.h: 2333: extern volatile __bit ADON @ (((unsigned) &ADCON0)*8) + 0;
+[; ;pic16f877a.h: 2335: extern volatile __bit BCLIE @ (((unsigned) &PIE2)*8) + 3;
+[; ;pic16f877a.h: 2337: extern volatile __bit BCLIF @ (((unsigned) &PIR2)*8) + 3;
+[; ;pic16f877a.h: 2339: extern volatile __bit BF @ (((unsigned) &SSPSTAT)*8) + 0;
+[; ;pic16f877a.h: 2341: extern volatile __bit BRGH @ (((unsigned) &TXSTA)*8) + 2;
+[; ;pic16f877a.h: 2343: extern volatile __bit C1INV @ (((unsigned) &CMCON)*8) + 4;
+[; ;pic16f877a.h: 2345: extern volatile __bit C1OUT @ (((unsigned) &CMCON)*8) + 6;
+[; ;pic16f877a.h: 2347: extern volatile __bit C2INV @ (((unsigned) &CMCON)*8) + 5;
+[; ;pic16f877a.h: 2349: extern volatile __bit C2OUT @ (((unsigned) &CMCON)*8) + 7;
+[; ;pic16f877a.h: 2351: extern volatile __bit CARRY @ (((unsigned) &STATUS)*8) + 0;
+[; ;pic16f877a.h: 2353: extern volatile __bit CCP1IE @ (((unsigned) &PIE1)*8) + 2;
+[; ;pic16f877a.h: 2355: extern volatile __bit CCP1IF @ (((unsigned) &PIR1)*8) + 2;
+[; ;pic16f877a.h: 2357: extern volatile __bit CCP1M0 @ (((unsigned) &CCP1CON)*8) + 0;
+[; ;pic16f877a.h: 2359: extern volatile __bit CCP1M1 @ (((unsigned) &CCP1CON)*8) + 1;
+[; ;pic16f877a.h: 2361: extern volatile __bit CCP1M2 @ (((unsigned) &CCP1CON)*8) + 2;
+[; ;pic16f877a.h: 2363: extern volatile __bit CCP1M3 @ (((unsigned) &CCP1CON)*8) + 3;
+[; ;pic16f877a.h: 2365: extern volatile __bit CCP1X @ (((unsigned) &CCP1CON)*8) + 5;
+[; ;pic16f877a.h: 2367: extern volatile __bit CCP1Y @ (((unsigned) &CCP1CON)*8) + 4;
+[; ;pic16f877a.h: 2369: extern volatile __bit CCP2IE @ (((unsigned) &PIE2)*8) + 0;
+[; ;pic16f877a.h: 2371: extern volatile __bit CCP2IF @ (((unsigned) &PIR2)*8) + 0;
+[; ;pic16f877a.h: 2373: extern volatile __bit CCP2M0 @ (((unsigned) &CCP2CON)*8) + 0;
+[; ;pic16f877a.h: 2375: extern volatile __bit CCP2M1 @ (((unsigned) &CCP2CON)*8) + 1;
+[; ;pic16f877a.h: 2377: extern volatile __bit CCP2M2 @ (((unsigned) &CCP2CON)*8) + 2;
+[; ;pic16f877a.h: 2379: extern volatile __bit CCP2M3 @ (((unsigned) &CCP2CON)*8) + 3;
+[; ;pic16f877a.h: 2381: extern volatile __bit CCP2X @ (((unsigned) &CCP2CON)*8) + 5;
+[; ;pic16f877a.h: 2383: extern volatile __bit CCP2Y @ (((unsigned) &CCP2CON)*8) + 4;
+[; ;pic16f877a.h: 2385: extern volatile __bit CHS0 @ (((unsigned) &ADCON0)*8) + 3;
+[; ;pic16f877a.h: 2387: extern volatile __bit CHS1 @ (((unsigned) &ADCON0)*8) + 4;
+[; ;pic16f877a.h: 2389: extern volatile __bit CHS2 @ (((unsigned) &ADCON0)*8) + 5;
+[; ;pic16f877a.h: 2391: extern volatile __bit CIS @ (((unsigned) &CMCON)*8) + 3;
+[; ;pic16f877a.h: 2393: extern volatile __bit CKE @ (((unsigned) &SSPSTAT)*8) + 6;
+[; ;pic16f877a.h: 2395: extern volatile __bit CKP @ (((unsigned) &SSPCON)*8) + 4;
+[; ;pic16f877a.h: 2397: extern volatile __bit CM0 @ (((unsigned) &CMCON)*8) + 0;
+[; ;pic16f877a.h: 2399: extern volatile __bit CM1 @ (((unsigned) &CMCON)*8) + 1;
+[; ;pic16f877a.h: 2401: extern volatile __bit CM2 @ (((unsigned) &CMCON)*8) + 2;
+[; ;pic16f877a.h: 2403: extern volatile __bit CMIE @ (((unsigned) &PIE2)*8) + 6;
+[; ;pic16f877a.h: 2405: extern volatile __bit CMIF @ (((unsigned) &PIR2)*8) + 6;
+[; ;pic16f877a.h: 2407: extern volatile __bit CREN @ (((unsigned) &RCSTA)*8) + 4;
+[; ;pic16f877a.h: 2409: extern volatile __bit CSRC @ (((unsigned) &TXSTA)*8) + 7;
+[; ;pic16f877a.h: 2411: extern volatile __bit CVR0 @ (((unsigned) &CVRCON)*8) + 0;
+[; ;pic16f877a.h: 2413: extern volatile __bit CVR1 @ (((unsigned) &CVRCON)*8) + 1;
+[; ;pic16f877a.h: 2415: extern volatile __bit CVR2 @ (((unsigned) &CVRCON)*8) + 2;
+[; ;pic16f877a.h: 2417: extern volatile __bit CVR3 @ (((unsigned) &CVRCON)*8) + 3;
+[; ;pic16f877a.h: 2419: extern volatile __bit CVREN @ (((unsigned) &CVRCON)*8) + 7;
+[; ;pic16f877a.h: 2421: extern volatile __bit CVROE @ (((unsigned) &CVRCON)*8) + 6;
+[; ;pic16f877a.h: 2423: extern volatile __bit CVRR @ (((unsigned) &CVRCON)*8) + 5;
+[; ;pic16f877a.h: 2425: extern volatile __bit DATA_ADDRESS @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2427: extern volatile __bit DC @ (((unsigned) &STATUS)*8) + 1;
+[; ;pic16f877a.h: 2429: extern volatile __bit D_A @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2431: extern volatile __bit D_nA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2433: extern volatile __bit EEIE @ (((unsigned) &PIE2)*8) + 4;
+[; ;pic16f877a.h: 2435: extern volatile __bit EEIF @ (((unsigned) &PIR2)*8) + 4;
+[; ;pic16f877a.h: 2437: extern volatile __bit EEPGD @ (((unsigned) &EECON1)*8) + 7;
+[; ;pic16f877a.h: 2439: extern volatile __bit FERR @ (((unsigned) &RCSTA)*8) + 2;
+[; ;pic16f877a.h: 2441: extern volatile __bit GCEN @ (((unsigned) &SSPCON2)*8) + 7;
+[; ;pic16f877a.h: 2443: extern volatile __bit GIE @ (((unsigned) &INTCON)*8) + 7;
+[; ;pic16f877a.h: 2445: extern volatile __bit GO @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2447: extern volatile __bit GO_DONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2449: extern volatile __bit GO_nDONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2451: extern volatile __bit I2C_DATA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2453: extern volatile __bit I2C_READ @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2455: extern volatile __bit I2C_START @ (((unsigned) &SSPSTAT)*8) + 3;
+[; ;pic16f877a.h: 2457: extern volatile __bit I2C_STOP @ (((unsigned) &SSPSTAT)*8) + 4;
+[; ;pic16f877a.h: 2459: extern volatile __bit IBF @ (((unsigned) &TRISE)*8) + 7;
+[; ;pic16f877a.h: 2461: extern volatile __bit IBOV @ (((unsigned) &TRISE)*8) + 5;
+[; ;pic16f877a.h: 2463: extern volatile __bit INTE @ (((unsigned) &INTCON)*8) + 4;
+[; ;pic16f877a.h: 2465: extern volatile __bit INTEDG @ (((unsigned) &OPTION_REG)*8) + 6;
+[; ;pic16f877a.h: 2467: extern volatile __bit INTF @ (((unsigned) &INTCON)*8) + 1;
+[; ;pic16f877a.h: 2469: extern volatile __bit IRP @ (((unsigned) &STATUS)*8) + 7;
+[; ;pic16f877a.h: 2471: extern volatile __bit OBF @ (((unsigned) &TRISE)*8) + 6;
+[; ;pic16f877a.h: 2473: extern volatile __bit OERR @ (((unsigned) &RCSTA)*8) + 1;
+[; ;pic16f877a.h: 2475: extern volatile __bit PCFG0 @ (((unsigned) &ADCON1)*8) + 0;
+[; ;pic16f877a.h: 2477: extern volatile __bit PCFG1 @ (((unsigned) &ADCON1)*8) + 1;
+[; ;pic16f877a.h: 2479: extern volatile __bit PCFG2 @ (((unsigned) &ADCON1)*8) + 2;
+[; ;pic16f877a.h: 2481: extern volatile __bit PCFG3 @ (((unsigned) &ADCON1)*8) + 3;
+[; ;pic16f877a.h: 2483: extern volatile __bit PEIE @ (((unsigned) &INTCON)*8) + 6;
+[; ;pic16f877a.h: 2485: extern volatile __bit PEN @ (((unsigned) &SSPCON2)*8) + 2;
+[; ;pic16f877a.h: 2487: extern volatile __bit PS0 @ (((unsigned) &OPTION_REG)*8) + 0;
+[; ;pic16f877a.h: 2489: extern volatile __bit PS1 @ (((unsigned) &OPTION_REG)*8) + 1;
+[; ;pic16f877a.h: 2491: extern volatile __bit PS2 @ (((unsigned) &OPTION_REG)*8) + 2;
+[; ;pic16f877a.h: 2493: extern volatile __bit PSA @ (((unsigned) &OPTION_REG)*8) + 3;
+[; ;pic16f877a.h: 2495: extern volatile __bit PSPIE @ (((unsigned) &PIE1)*8) + 7;
+[; ;pic16f877a.h: 2497: extern volatile __bit PSPIF @ (((unsigned) &PIR1)*8) + 7;
+[; ;pic16f877a.h: 2499: extern volatile __bit PSPMODE @ (((unsigned) &TRISE)*8) + 4;
+[; ;pic16f877a.h: 2501: extern volatile __bit RA0 @ (((unsigned) &PORTA)*8) + 0;
+[; ;pic16f877a.h: 2503: extern volatile __bit RA1 @ (((unsigned) &PORTA)*8) + 1;
+[; ;pic16f877a.h: 2505: extern volatile __bit RA2 @ (((unsigned) &PORTA)*8) + 2;
+[; ;pic16f877a.h: 2507: extern volatile __bit RA3 @ (((unsigned) &PORTA)*8) + 3;
+[; ;pic16f877a.h: 2509: extern volatile __bit RA4 @ (((unsigned) &PORTA)*8) + 4;
+[; ;pic16f877a.h: 2511: extern volatile __bit RA5 @ (((unsigned) &PORTA)*8) + 5;
+[; ;pic16f877a.h: 2513: extern volatile __bit RB0 @ (((unsigned) &PORTB)*8) + 0;
+[; ;pic16f877a.h: 2515: extern volatile __bit RB1 @ (((unsigned) &PORTB)*8) + 1;
+[; ;pic16f877a.h: 2517: extern volatile __bit RB2 @ (((unsigned) &PORTB)*8) + 2;
+[; ;pic16f877a.h: 2519: extern volatile __bit RB3 @ (((unsigned) &PORTB)*8) + 3;
+[; ;pic16f877a.h: 2521: extern volatile __bit RB4 @ (((unsigned) &PORTB)*8) + 4;
+[; ;pic16f877a.h: 2523: extern volatile __bit RB5 @ (((unsigned) &PORTB)*8) + 5;
+[; ;pic16f877a.h: 2525: extern volatile __bit RB6 @ (((unsigned) &PORTB)*8) + 6;
+[; ;pic16f877a.h: 2527: extern volatile __bit RB7 @ (((unsigned) &PORTB)*8) + 7;
+[; ;pic16f877a.h: 2529: extern volatile __bit RBIE @ (((unsigned) &INTCON)*8) + 3;
+[; ;pic16f877a.h: 2531: extern volatile __bit RBIF @ (((unsigned) &INTCON)*8) + 0;
+[; ;pic16f877a.h: 2533: extern volatile __bit RC0 @ (((unsigned) &PORTC)*8) + 0;
+[; ;pic16f877a.h: 2535: extern volatile __bit RC1 @ (((unsigned) &PORTC)*8) + 1;
+[; ;pic16f877a.h: 2537: extern volatile __bit RC2 @ (((unsigned) &PORTC)*8) + 2;
+[; ;pic16f877a.h: 2539: extern volatile __bit RC3 @ (((unsigned) &PORTC)*8) + 3;
+[; ;pic16f877a.h: 2541: extern volatile __bit RC4 @ (((unsigned) &PORTC)*8) + 4;
+[; ;pic16f877a.h: 2543: extern volatile __bit RC5 @ (((unsigned) &PORTC)*8) + 5;
+[; ;pic16f877a.h: 2545: extern volatile __bit RC6 @ (((unsigned) &PORTC)*8) + 6;
+[; ;pic16f877a.h: 2547: extern volatile __bit RC7 @ (((unsigned) &PORTC)*8) + 7;
+[; ;pic16f877a.h: 2549: extern volatile __bit RC8_9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2551: extern volatile __bit RC9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2553: extern volatile __bit RCD8 @ (((unsigned) &RCSTA)*8) + 0;
+[; ;pic16f877a.h: 2555: extern volatile __bit RCEN @ (((unsigned) &SSPCON2)*8) + 3;
+[; ;pic16f877a.h: 2557: extern volatile __bit RCIE @ (((unsigned) &PIE1)*8) + 5;
+[; ;pic16f877a.h: 2559: extern volatile __bit RCIF @ (((unsigned) &PIR1)*8) + 5;
+[; ;pic16f877a.h: 2561: extern volatile __bit RD @ (((unsigned) &EECON1)*8) + 0;
+[; ;pic16f877a.h: 2563: extern volatile __bit RD0 @ (((unsigned) &PORTD)*8) + 0;
+[; ;pic16f877a.h: 2565: extern volatile __bit RD1 @ (((unsigned) &PORTD)*8) + 1;
+[; ;pic16f877a.h: 2567: extern volatile __bit RD2 @ (((unsigned) &PORTD)*8) + 2;
+[; ;pic16f877a.h: 2569: extern volatile __bit RD3 @ (((unsigned) &PORTD)*8) + 3;
+[; ;pic16f877a.h: 2571: extern volatile __bit RD4 @ (((unsigned) &PORTD)*8) + 4;
+[; ;pic16f877a.h: 2573: extern volatile __bit RD5 @ (((unsigned) &PORTD)*8) + 5;
+[; ;pic16f877a.h: 2575: extern volatile __bit RD6 @ (((unsigned) &PORTD)*8) + 6;
+[; ;pic16f877a.h: 2577: extern volatile __bit RD7 @ (((unsigned) &PORTD)*8) + 7;
+[; ;pic16f877a.h: 2579: extern volatile __bit RE0 @ (((unsigned) &PORTE)*8) + 0;
+[; ;pic16f877a.h: 2581: extern volatile __bit RE1 @ (((unsigned) &PORTE)*8) + 1;
+[; ;pic16f877a.h: 2583: extern volatile __bit RE2 @ (((unsigned) &PORTE)*8) + 2;
+[; ;pic16f877a.h: 2585: extern volatile __bit READ_WRITE @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2587: extern volatile __bit RP0 @ (((unsigned) &STATUS)*8) + 5;
+[; ;pic16f877a.h: 2589: extern volatile __bit RP1 @ (((unsigned) &STATUS)*8) + 6;
+[; ;pic16f877a.h: 2591: extern volatile __bit RSEN @ (((unsigned) &SSPCON2)*8) + 1;
+[; ;pic16f877a.h: 2593: extern volatile __bit RX9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2595: extern volatile __bit RX9D @ (((unsigned) &RCSTA)*8) + 0;
+[; ;pic16f877a.h: 2597: extern volatile __bit R_W @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2599: extern volatile __bit R_nW @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2601: extern volatile __bit SEN @ (((unsigned) &SSPCON2)*8) + 0;
+[; ;pic16f877a.h: 2603: extern volatile __bit SMP @ (((unsigned) &SSPSTAT)*8) + 7;
+[; ;pic16f877a.h: 2605: extern volatile __bit SPEN @ (((unsigned) &RCSTA)*8) + 7;
+[; ;pic16f877a.h: 2607: extern volatile __bit SREN @ (((unsigned) &RCSTA)*8) + 5;
+[; ;pic16f877a.h: 2609: extern volatile __bit SSPEN @ (((unsigned) &SSPCON)*8) + 5;
+[; ;pic16f877a.h: 2611: extern volatile __bit SSPIE @ (((unsigned) &PIE1)*8) + 3;
+[; ;pic16f877a.h: 2613: extern volatile __bit SSPIF @ (((unsigned) &PIR1)*8) + 3;
+[; ;pic16f877a.h: 2615: extern volatile __bit SSPM0 @ (((unsigned) &SSPCON)*8) + 0;
+[; ;pic16f877a.h: 2617: extern volatile __bit SSPM1 @ (((unsigned) &SSPCON)*8) + 1;
+[; ;pic16f877a.h: 2619: extern volatile __bit SSPM2 @ (((unsigned) &SSPCON)*8) + 2;
+[; ;pic16f877a.h: 2621: extern volatile __bit SSPM3 @ (((unsigned) &SSPCON)*8) + 3;
+[; ;pic16f877a.h: 2623: extern volatile __bit SSPOV @ (((unsigned) &SSPCON)*8) + 6;
+[; ;pic16f877a.h: 2625: extern volatile __bit SYNC @ (((unsigned) &TXSTA)*8) + 4;
+[; ;pic16f877a.h: 2627: extern volatile __bit T0CS @ (((unsigned) &OPTION_REG)*8) + 5;
+[; ;pic16f877a.h: 2629: extern volatile __bit T0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f877a.h: 2631: extern volatile __bit T0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f877a.h: 2633: extern volatile __bit T0SE @ (((unsigned) &OPTION_REG)*8) + 4;
+[; ;pic16f877a.h: 2635: extern volatile __bit T1CKPS0 @ (((unsigned) &T1CON)*8) + 4;
+[; ;pic16f877a.h: 2637: extern volatile __bit T1CKPS1 @ (((unsigned) &T1CON)*8) + 5;
+[; ;pic16f877a.h: 2639: extern volatile __bit T1INSYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f877a.h: 2641: extern volatile __bit T1OSCEN @ (((unsigned) &T1CON)*8) + 3;
+[; ;pic16f877a.h: 2643: extern volatile __bit T1SYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f877a.h: 2645: extern volatile __bit T2CKPS0 @ (((unsigned) &T2CON)*8) + 0;
+[; ;pic16f877a.h: 2647: extern volatile __bit T2CKPS1 @ (((unsigned) &T2CON)*8) + 1;
+[; ;pic16f877a.h: 2649: extern volatile __bit TMR0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f877a.h: 2651: extern volatile __bit TMR0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f877a.h: 2653: extern volatile __bit TMR1CS @ (((unsigned) &T1CON)*8) + 1;
+[; ;pic16f877a.h: 2655: extern volatile __bit TMR1IE @ (((unsigned) &PIE1)*8) + 0;
+[; ;pic16f877a.h: 2657: extern volatile __bit TMR1IF @ (((unsigned) &PIR1)*8) + 0;
+[; ;pic16f877a.h: 2659: extern volatile __bit TMR1ON @ (((unsigned) &T1CON)*8) + 0;
+[; ;pic16f877a.h: 2661: extern volatile __bit TMR2IE @ (((unsigned) &PIE1)*8) + 1;
+[; ;pic16f877a.h: 2663: extern volatile __bit TMR2IF @ (((unsigned) &PIR1)*8) + 1;
+[; ;pic16f877a.h: 2665: extern volatile __bit TMR2ON @ (((unsigned) &T2CON)*8) + 2;
+[; ;pic16f877a.h: 2667: extern volatile __bit TOUTPS0 @ (((unsigned) &T2CON)*8) + 3;
+[; ;pic16f877a.h: 2669: extern volatile __bit TOUTPS1 @ (((unsigned) &T2CON)*8) + 4;
+[; ;pic16f877a.h: 2671: extern volatile __bit TOUTPS2 @ (((unsigned) &T2CON)*8) + 5;
+[; ;pic16f877a.h: 2673: extern volatile __bit TOUTPS3 @ (((unsigned) &T2CON)*8) + 6;
+[; ;pic16f877a.h: 2675: extern volatile __bit TRISA0 @ (((unsigned) &TRISA)*8) + 0;
+[; ;pic16f877a.h: 2677: extern volatile __bit TRISA1 @ (((unsigned) &TRISA)*8) + 1;
+[; ;pic16f877a.h: 2679: extern volatile __bit TRISA2 @ (((unsigned) &TRISA)*8) + 2;
+[; ;pic16f877a.h: 2681: extern volatile __bit TRISA3 @ (((unsigned) &TRISA)*8) + 3;
+[; ;pic16f877a.h: 2683: extern volatile __bit TRISA4 @ (((unsigned) &TRISA)*8) + 4;
+[; ;pic16f877a.h: 2685: extern volatile __bit TRISA5 @ (((unsigned) &TRISA)*8) + 5;
+[; ;pic16f877a.h: 2687: extern volatile __bit TRISB0 @ (((unsigned) &TRISB)*8) + 0;
+[; ;pic16f877a.h: 2689: extern volatile __bit TRISB1 @ (((unsigned) &TRISB)*8) + 1;
+[; ;pic16f877a.h: 2691: extern volatile __bit TRISB2 @ (((unsigned) &TRISB)*8) + 2;
+[; ;pic16f877a.h: 2693: extern volatile __bit TRISB3 @ (((unsigned) &TRISB)*8) + 3;
+[; ;pic16f877a.h: 2695: extern volatile __bit TRISB4 @ (((unsigned) &TRISB)*8) + 4;
+[; ;pic16f877a.h: 2697: extern volatile __bit TRISB5 @ (((unsigned) &TRISB)*8) + 5;
+[; ;pic16f877a.h: 2699: extern volatile __bit TRISB6 @ (((unsigned) &TRISB)*8) + 6;
+[; ;pic16f877a.h: 2701: extern volatile __bit TRISB7 @ (((unsigned) &TRISB)*8) + 7;
+[; ;pic16f877a.h: 2703: extern volatile __bit TRISC0 @ (((unsigned) &TRISC)*8) + 0;
+[; ;pic16f877a.h: 2705: extern volatile __bit TRISC1 @ (((unsigned) &TRISC)*8) + 1;
+[; ;pic16f877a.h: 2707: extern volatile __bit TRISC2 @ (((unsigned) &TRISC)*8) + 2;
+[; ;pic16f877a.h: 2709: extern volatile __bit TRISC3 @ (((unsigned) &TRISC)*8) + 3;
+[; ;pic16f877a.h: 2711: extern volatile __bit TRISC4 @ (((unsigned) &TRISC)*8) + 4;
+[; ;pic16f877a.h: 2713: extern volatile __bit TRISC5 @ (((unsigned) &TRISC)*8) + 5;
+[; ;pic16f877a.h: 2715: extern volatile __bit TRISC6 @ (((unsigned) &TRISC)*8) + 6;
+[; ;pic16f877a.h: 2717: extern volatile __bit TRISC7 @ (((unsigned) &TRISC)*8) + 7;
+[; ;pic16f877a.h: 2719: extern volatile __bit TRISD0 @ (((unsigned) &TRISD)*8) + 0;
+[; ;pic16f877a.h: 2721: extern volatile __bit TRISD1 @ (((unsigned) &TRISD)*8) + 1;
+[; ;pic16f877a.h: 2723: extern volatile __bit TRISD2 @ (((unsigned) &TRISD)*8) + 2;
+[; ;pic16f877a.h: 2725: extern volatile __bit TRISD3 @ (((unsigned) &TRISD)*8) + 3;
+[; ;pic16f877a.h: 2727: extern volatile __bit TRISD4 @ (((unsigned) &TRISD)*8) + 4;
+[; ;pic16f877a.h: 2729: extern volatile __bit TRISD5 @ (((unsigned) &TRISD)*8) + 5;
+[; ;pic16f877a.h: 2731: extern volatile __bit TRISD6 @ (((unsigned) &TRISD)*8) + 6;
+[; ;pic16f877a.h: 2733: extern volatile __bit TRISD7 @ (((unsigned) &TRISD)*8) + 7;
+[; ;pic16f877a.h: 2735: extern volatile __bit TRISE0 @ (((unsigned) &TRISE)*8) + 0;
+[; ;pic16f877a.h: 2737: extern volatile __bit TRISE1 @ (((unsigned) &TRISE)*8) + 1;
+[; ;pic16f877a.h: 2739: extern volatile __bit TRISE2 @ (((unsigned) &TRISE)*8) + 2;
+[; ;pic16f877a.h: 2741: extern volatile __bit TRMT @ (((unsigned) &TXSTA)*8) + 1;
+[; ;pic16f877a.h: 2743: extern volatile __bit TX8_9 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f877a.h: 2745: extern volatile __bit TX9 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f877a.h: 2747: extern volatile __bit TX9D @ (((unsigned) &TXSTA)*8) + 0;
+[; ;pic16f877a.h: 2749: extern volatile __bit TXD8 @ (((unsigned) &TXSTA)*8) + 0;
+[; ;pic16f877a.h: 2751: extern volatile __bit TXEN @ (((unsigned) &TXSTA)*8) + 5;
+[; ;pic16f877a.h: 2753: extern volatile __bit TXIE @ (((unsigned) &PIE1)*8) + 4;
+[; ;pic16f877a.h: 2755: extern volatile __bit TXIF @ (((unsigned) &PIR1)*8) + 4;
+[; ;pic16f877a.h: 2757: extern volatile __bit UA @ (((unsigned) &SSPSTAT)*8) + 1;
+[; ;pic16f877a.h: 2759: extern volatile __bit WCOL @ (((unsigned) &SSPCON)*8) + 7;
+[; ;pic16f877a.h: 2761: extern volatile __bit WR @ (((unsigned) &EECON1)*8) + 1;
+[; ;pic16f877a.h: 2763: extern volatile __bit WREN @ (((unsigned) &EECON1)*8) + 2;
+[; ;pic16f877a.h: 2765: extern volatile __bit WRERR @ (((unsigned) &EECON1)*8) + 3;
+[; ;pic16f877a.h: 2767: extern volatile __bit ZERO @ (((unsigned) &STATUS)*8) + 2;
+[; ;pic16f877a.h: 2769: extern volatile __bit nA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2771: extern volatile __bit nADDRESS @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2773: extern volatile __bit nBO @ (((unsigned) &PCON)*8) + 0;
+[; ;pic16f877a.h: 2775: extern volatile __bit nBOR @ (((unsigned) &PCON)*8) + 0;
+[; ;pic16f877a.h: 2777: extern volatile __bit nDONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2779: extern volatile __bit nPD @ (((unsigned) &STATUS)*8) + 3;
+[; ;pic16f877a.h: 2781: extern volatile __bit nPOR @ (((unsigned) &PCON)*8) + 1;
+[; ;pic16f877a.h: 2783: extern volatile __bit nRBPU @ (((unsigned) &OPTION_REG)*8) + 7;
+[; ;pic16f877a.h: 2785: extern volatile __bit nRC8 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2787: extern volatile __bit nT1SYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f877a.h: 2789: extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
+[; ;pic16f877a.h: 2791: extern volatile __bit nTX8 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f877a.h: 2793: extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2795: extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic.h: 28: extern void __nop(void);
+[; ;pic.h: 76: extern unsigned int flash_read(unsigned short addr);
+[; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
+[; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
+[; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
+[; ;pic.h: 150: extern __nonreentrant void _delay(unsigned long);
+[; ;pic.h: 184: extern unsigned char __resetbits;
+[; ;pic.h: 185: extern __bit __powerdown;
+[; ;pic.h: 186: extern __bit __timeout;
+"18 APDS9960.c
+[v _initialize `(uc ~T0 @X0 1 ef ]
+"19
+{
+[; ;APDS9960.c: 18: bool initialize()
+[; ;APDS9960.c: 19: {
+[e :U _initialize ]
+[f ]
+"21
+[v _id `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 21: unsigned char id=0;
+[e = _id -> -> 0 `i `uc ]
+[; ;APDS9960.c: 23: InitI2C();
+"23
+[e ( _InitI2C ..  ]
+[; ;APDS9960.c: 27: id = wireReadDataByte(0x92);
+"27
+[e = _id ( _wireReadDataByte (1 -> -> 146 `i `uc ]
+[; ;APDS9960.c: 30: if( !(id == 0xAB ||id == 0x9C ) )
+"30
+[e $ ! ! || == -> _id `i -> 171 `i == -> _id `i -> 156 `i 98  ]
+[; ;APDS9960.c: 31: {
+"31
+{
+[; ;APDS9960.c: 32: return 0;
+"32
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"33
+}
+[e :U 98 ]
+[; ;APDS9960.c: 33: }
+[; ;APDS9960.c: 35: setMode(7, 0);
+"35
+[e ( _setMode (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
+[; ;APDS9960.c: 37: wireWriteDataByte(0x81, 219);
+"37
+[e ( _wireWriteDataByte (2 , -> -> 129 `i `uc -> -> 219 `i `uc ]
+[; ;APDS9960.c: 38: wireWriteDataByte(0x83, 246);
+"38
+[e ( _wireWriteDataByte (2 , -> -> 131 `i `uc -> -> 246 `i `uc ]
+[; ;APDS9960.c: 39: wireWriteDataByte(0x8E, 0x87);
+"39
+[e ( _wireWriteDataByte (2 , -> -> 142 `i `uc -> -> 135 `i `uc ]
+[; ;APDS9960.c: 40: wireWriteDataByte(0x9D, 0) ;
+"40
+[e ( _wireWriteDataByte (2 , -> -> 157 `i `uc -> -> 0 `i `uc ]
+[; ;APDS9960.c: 41: wireWriteDataByte(0x9E, 0) ;
+"41
+[e ( _wireWriteDataByte (2 , -> -> 158 `i `uc -> -> 0 `i `uc ]
+[; ;APDS9960.c: 42: wireWriteDataByte(0x8D, 0x60) ;
+"42
+[e ( _wireWriteDataByte (2 , -> -> 141 `i `uc -> -> 96 `i `uc ]
+[; ;APDS9960.c: 43: setLEDDrive(0);
+"43
+[e ( _setLEDDrive (1 -> -> 0 `i `uc ]
+[; ;APDS9960.c: 44: setProximityGain(2);
+"44
+[e ( _setProximityGain (1 -> -> 2 `i `uc ]
+[; ;APDS9960.c: 45: setAmbientLightGain(1);
+"45
+[e ( _setAmbientLightGain (1 -> -> 1 `i `uc ]
+[; ;APDS9960.c: 46: if( !setProxIntLowThresh(0) ) {
+"46
+[e $ ! ! != -> ( _setProxIntLowThresh (1 -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 99  ]
+{
+[; ;APDS9960.c: 48: return 0;
+"48
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"49
+}
+[e :U 99 ]
+[; ;APDS9960.c: 49: }
+[; ;APDS9960.c: 50: if( !setProxIntHighThresh(50) ) {
+"50
+[e $ ! ! != -> ( _setProxIntHighThresh (1 -> -> 50 `i `uc `i -> -> -> 0 `i `uc `i 100  ]
+{
+[; ;APDS9960.c: 52: return 0;
+"52
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"53
+}
+[e :U 100 ]
+[; ;APDS9960.c: 53: }
+[; ;APDS9960.c: 55: if( !setLightIntLowThreshold(0xFFFF) ) {
+"55
+[e $ ! ! != -> ( _setLightIntLowThreshold (1 -> 65535 `ui `i -> -> -> 0 `i `uc `i 101  ]
+{
+[; ;APDS9960.c: 56: return 0;
+"56
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"57
+}
+[e :U 101 ]
+[; ;APDS9960.c: 57: }
+[; ;APDS9960.c: 58: if( !setLightIntHighThreshold(0) ) {
+"58
+[e $ ! ! != -> ( _setLightIntHighThreshold (1 -> -> 0 `i `ui `i -> -> -> 0 `i `uc `i 102  ]
+{
+[; ;APDS9960.c: 60: return 0;
+"60
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"61
+}
+[e :U 102 ]
+[; ;APDS9960.c: 61: }
+[; ;APDS9960.c: 62: if( !wireWriteDataByte(0x8C, 0x11) ) {
+"62
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 140 `i `uc -> -> 17 `i `uc -> 0 `i 103  ]
+{
+[; ;APDS9960.c: 64: return 0;
+"64
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"65
+}
+[e :U 103 ]
+[; ;APDS9960.c: 65: }
+[; ;APDS9960.c: 66: if( !wireWriteDataByte(0x90, 0x01) ) {
+"66
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 144 `i `uc -> -> 1 `i `uc -> 0 `i 104  ]
+{
+[; ;APDS9960.c: 67: return 0;
+"67
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"68
+}
+[e :U 104 ]
+[; ;APDS9960.c: 68: }
+[; ;APDS9960.c: 69: if( !wireWriteDataByte(0x9F, 0) ) {
+"69
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 159 `i `uc -> -> 0 `i `uc -> 0 `i 105  ]
+{
+[; ;APDS9960.c: 70: return 0;
+"70
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"71
+}
+[e :U 105 ]
+[; ;APDS9960.c: 71: }
+[; ;APDS9960.c: 73: if( !setGestureEnterThresh(40) ) {
+"73
+[e $ ! ! != -> ( _setGestureEnterThresh (1 -> -> 40 `i `uc `i -> -> -> 0 `i `uc `i 106  ]
+{
+[; ;APDS9960.c: 75: return 0;
+"75
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"76
+}
+[e :U 106 ]
+[; ;APDS9960.c: 76: }
+[; ;APDS9960.c: 77: if( !setGestureExitThresh(30) ) {
+"77
+[e $ ! ! != -> ( _setGestureExitThresh (1 -> -> 30 `i `uc `i -> -> -> 0 `i `uc `i 107  ]
+{
+[; ;APDS9960.c: 78: return 0;
+"78
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"79
+}
+[e :U 107 ]
+[; ;APDS9960.c: 79: }
+[; ;APDS9960.c: 80: if( !wireWriteDataByte(0xA2, 0x40) ) {
+"80
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 162 `i `uc -> -> 64 `i `uc -> 0 `i 108  ]
+{
+[; ;APDS9960.c: 81: return 0;
+"81
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"82
+}
+[e :U 108 ]
+[; ;APDS9960.c: 82: }
+[; ;APDS9960.c: 83: if( !setGestureGain(2) ) {
+"83
+[e $ ! ! != -> ( _setGestureGain (1 -> -> 2 `i `uc `i -> -> -> 0 `i `uc `i 109  ]
+{
+[; ;APDS9960.c: 84: return 0;
+"84
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"85
+}
+[e :U 109 ]
+[; ;APDS9960.c: 85: }
+[; ;APDS9960.c: 86: if( !setGestureLEDDrive(0) ) {
+"86
+[e $ ! ! != -> ( _setGestureLEDDrive (1 -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 110  ]
+{
+[; ;APDS9960.c: 87: return 0;
+"87
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"88
+}
+[e :U 110 ]
+[; ;APDS9960.c: 88: }
+[; ;APDS9960.c: 89: if( !setGestureWaitTime(1) ) {
+"89
+[e $ ! ! != -> ( _setGestureWaitTime (1 -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 111  ]
+{
+[; ;APDS9960.c: 90: return 0;
+"90
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"91
+}
+[e :U 111 ]
+[; ;APDS9960.c: 91: }
+[; ;APDS9960.c: 92: if( !wireWriteDataByte(0xA4, 0) ) {
+"92
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 164 `i `uc -> -> 0 `i `uc -> 0 `i 112  ]
+{
+[; ;APDS9960.c: 93: return 0;
+"93
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"94
+}
+[e :U 112 ]
+[; ;APDS9960.c: 94: }
+[; ;APDS9960.c: 95: if( !wireWriteDataByte(0xA5, 0) ) {
+"95
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 165 `i `uc -> -> 0 `i `uc -> 0 `i 113  ]
+{
+[; ;APDS9960.c: 96: return 0;
+"96
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"97
+}
+[e :U 113 ]
+[; ;APDS9960.c: 97: }
+[; ;APDS9960.c: 98: if( !wireWriteDataByte(0xA7, 0) ) {
+"98
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 167 `i `uc -> -> 0 `i `uc -> 0 `i 114  ]
+{
+[; ;APDS9960.c: 99: return 0;
+"99
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"100
+}
+[e :U 114 ]
+[; ;APDS9960.c: 100: }
+[; ;APDS9960.c: 101: if( !wireWriteDataByte(0xA9, 0) ) {
+"101
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 169 `i `uc -> -> 0 `i `uc -> 0 `i 115  ]
+{
+[; ;APDS9960.c: 102: return 0;
+"102
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"103
+}
+[e :U 115 ]
+[; ;APDS9960.c: 103: }
+[; ;APDS9960.c: 104: if( !wireWriteDataByte(0xA6, 0xC9) ) {
+"104
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 166 `i `uc -> -> 201 `i `uc -> 0 `i 116  ]
+{
+[; ;APDS9960.c: 105: return 0;
+"105
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"106
+}
+[e :U 116 ]
+[; ;APDS9960.c: 106: }
+[; ;APDS9960.c: 107: if( !wireWriteDataByte(0xAA, 0) ) {
+"107
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 170 `i `uc -> -> 0 `i `uc -> 0 `i 117  ]
+{
+[; ;APDS9960.c: 108: return 0;
+"108
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"109
+}
+[e :U 117 ]
+[; ;APDS9960.c: 109: }
+[; ;APDS9960.c: 110: if( !setGestureIntEnable(0) ) {
+"110
+[e $ ! ! != -> ( _setGestureIntEnable (1 -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 118  ]
+{
+[; ;APDS9960.c: 111: return 0;
+"111
+[e ) -> -> 0 `i `uc ]
+[e $UE 97  ]
+"112
+}
+[e :U 118 ]
+[; ;APDS9960.c: 112: }
+[; ;APDS9960.c: 114: return 1;
+"114
+[e ) -> -> 1 `i `uc ]
+[e $UE 97  ]
+[; ;APDS9960.c: 115: }
+"115
+[e :UE 97 ]
+}
+"118
+[v _setMode `(uc ~T0 @X0 1 ef2`uc`uc ]
+"119
+{
+[; ;APDS9960.c: 118: bool setMode(uint8_t mode, uint8_t enable)
+[; ;APDS9960.c: 119: {
+[e :U _setMode ]
+"118
+[v _mode `uc ~T0 @X0 1 r1 ]
+[v _enable `uc ~T0 @X0 1 r2 ]
+"119
+[f ]
+"120
+[v _reg_val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 120: uint8_t reg_val;
+[; ;APDS9960.c: 123: reg_val = getMode();
+"123
+[e = _reg_val ( _getMode ..  ]
+[; ;APDS9960.c: 124: if( reg_val == 0xFF ) {
+"124
+[e $ ! == -> _reg_val `i -> 255 `i 120  ]
+{
+[; ;APDS9960.c: 125: return 0;
+"125
+[e ) -> -> 0 `i `uc ]
+[e $UE 119  ]
+"126
+}
+[e :U 120 ]
+[; ;APDS9960.c: 126: }
+[; ;APDS9960.c: 129: enable = enable & 0x01;
+"129
+[e = _enable -> & -> _enable `i -> 1 `i `uc ]
+[; ;APDS9960.c: 130: if( mode >= 0 && mode <= 6 ) {
+"130
+[e $ ! && >= -> _mode `i -> 0 `i <= -> _mode `i -> 6 `i 121  ]
+{
+[; ;APDS9960.c: 131: if (enable) {
+"131
+[e $ ! != -> _enable `i -> -> -> 0 `i `uc `i 122  ]
+{
+[; ;APDS9960.c: 132: reg_val |= (1 << mode);
+"132
+[e =| _reg_val -> << -> 1 `i _mode `uc ]
+"133
+}
+[; ;APDS9960.c: 133: } else {
+[e $U 123  ]
+[e :U 122 ]
+{
+[; ;APDS9960.c: 134: reg_val &= ~(1 << mode);
+"134
+[e =& _reg_val -> ~ << -> 1 `i _mode `uc ]
+"135
+}
+[e :U 123 ]
+"136
+}
+[; ;APDS9960.c: 135: }
+[; ;APDS9960.c: 136: } else if( mode == 7 ) {
+[e $U 124  ]
+[e :U 121 ]
+[e $ ! == -> _mode `i -> 7 `i 125  ]
+{
+[; ;APDS9960.c: 137: if (enable) {
+"137
+[e $ ! != -> _enable `i -> -> -> 0 `i `uc `i 126  ]
+{
+[; ;APDS9960.c: 138: reg_val = 0x7F;
+"138
+[e = _reg_val -> -> 127 `i `uc ]
+"139
+}
+[; ;APDS9960.c: 139: } else {
+[e $U 127  ]
+[e :U 126 ]
+{
+[; ;APDS9960.c: 140: reg_val = 0x00;
+"140
+[e = _reg_val -> -> 0 `i `uc ]
+"141
+}
+[e :U 127 ]
+"142
+}
+[e :U 125 ]
+"145
+[e :U 124 ]
+[; ;APDS9960.c: 141: }
+[; ;APDS9960.c: 142: }
+[; ;APDS9960.c: 145: if( !wireWriteDataByte(0x80, reg_val) ) {
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 128 `i `uc _reg_val -> 0 `i 128  ]
+{
+[; ;APDS9960.c: 146: return 0;
+"146
+[e ) -> -> 0 `i `uc ]
+[e $UE 119  ]
+"147
+}
+[e :U 128 ]
+[; ;APDS9960.c: 147: }
+[; ;APDS9960.c: 149: return 1;
+"149
+[e ) -> -> 1 `i `uc ]
+[e $UE 119  ]
+[; ;APDS9960.c: 150: }
+"150
+[e :UE 119 ]
+}
+"153
+[v _getMode `(uc ~T0 @X0 1 ef ]
+"154
+{
+[; ;APDS9960.c: 153: uint8_t getMode()
+[; ;APDS9960.c: 154: {
+[e :U _getMode ]
+[f ]
+"155
+[v _enable_value `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 155: uint8_t enable_value;
+[; ;APDS9960.c: 158: enable_value = wireReadDataByte(0x80);
+"158
+[e = _enable_value ( _wireReadDataByte (1 -> -> 128 `i `uc ]
+[; ;APDS9960.c: 160: return enable_value;
+"160
+[e ) _enable_value ]
+[e $UE 129  ]
+[; ;APDS9960.c: 161: }
+"161
+[e :UE 129 ]
+}
+"164
+[v _setLEDDrive `(uc ~T0 @X0 1 ef1`uc ]
+"165
+{
+[; ;APDS9960.c: 164: bool setLEDDrive(uint8_t drive)
+[; ;APDS9960.c: 165: {
+[e :U _setLEDDrive ]
+"164
+[v _drive `uc ~T0 @X0 1 r1 ]
+"165
+[f ]
+"166
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 166: uint8_t val;
+[; ;APDS9960.c: 169: val=wireReadDataByte(0x8F);
+"169
+[e = _val ( _wireReadDataByte (1 -> -> 143 `i `uc ]
+[; ;APDS9960.c: 172: drive &= 0b00000011;
+"172
+[e =& _drive -> -> 3 `i `uc ]
+[; ;APDS9960.c: 173: drive = drive << 6;
+"173
+[e = _drive -> << -> _drive `i -> 6 `i `uc ]
+[; ;APDS9960.c: 174: val &= 0b00111111;
+"174
+[e =& _val -> -> 63 `i `uc ]
+[; ;APDS9960.c: 175: val |= drive;
+"175
+[e =| _val _drive ]
+[; ;APDS9960.c: 178: if( !wireWriteDataByte(0x8F, val) ) {
+"178
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 143 `i `uc _val -> 0 `i 131  ]
+{
+[; ;APDS9960.c: 179: return 0;
+"179
+[e ) -> -> 0 `i `uc ]
+[e $UE 130  ]
+"180
+}
+[e :U 131 ]
+[; ;APDS9960.c: 180: }
+[; ;APDS9960.c: 182: return 1;
+"182
+[e ) -> -> 1 `i `uc ]
+[e $UE 130  ]
+[; ;APDS9960.c: 183: }
+"183
+[e :UE 130 ]
+}
+"186
+[v _setProximityGain `(uc ~T0 @X0 1 ef1`uc ]
+"187
+{
+[; ;APDS9960.c: 186: bool setProximityGain(uint8_t drive)
+[; ;APDS9960.c: 187: {
+[e :U _setProximityGain ]
+"186
+[v _drive `uc ~T0 @X0 1 r1 ]
+"187
+[f ]
+"188
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 188: uint8_t val;
+[; ;APDS9960.c: 191: val=wireReadDataByte(0x8F);
+"191
+[e = _val ( _wireReadDataByte (1 -> -> 143 `i `uc ]
+[; ;APDS9960.c: 193: drive &= 0b00000011;
+"193
+[e =& _drive -> -> 3 `i `uc ]
+[; ;APDS9960.c: 194: drive = drive << 2;
+"194
+[e = _drive -> << -> _drive `i -> 2 `i `uc ]
+[; ;APDS9960.c: 195: val &= 0b11110011;
+"195
+[e =& _val -> -> 243 `i `uc ]
+[; ;APDS9960.c: 196: val |= drive;
+"196
+[e =| _val _drive ]
+[; ;APDS9960.c: 199: if( !wireWriteDataByte(0x8F, val) ) {
+"199
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 143 `i `uc _val -> 0 `i 133  ]
+{
+[; ;APDS9960.c: 200: return 0;
+"200
+[e ) -> -> 0 `i `uc ]
+[e $UE 132  ]
+"201
+}
+[e :U 133 ]
+[; ;APDS9960.c: 201: }
+[; ;APDS9960.c: 203: return 1;
+"203
+[e ) -> -> 1 `i `uc ]
+[e $UE 132  ]
+[; ;APDS9960.c: 204: }
+"204
+[e :UE 132 ]
+}
+"207
+[v _setAmbientLightGain `(uc ~T0 @X0 1 ef1`uc ]
+"208
+{
+[; ;APDS9960.c: 207: bool setAmbientLightGain(uint8_t drive)
+[; ;APDS9960.c: 208: {
+[e :U _setAmbientLightGain ]
+"207
+[v _drive `uc ~T0 @X0 1 r1 ]
+"208
+[f ]
+"209
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 209: uint8_t val;
+[; ;APDS9960.c: 212: val= wireReadDataByte(0x8F);
+"212
+[e = _val ( _wireReadDataByte (1 -> -> 143 `i `uc ]
+[; ;APDS9960.c: 215: drive &= 0b00000011;
+"215
+[e =& _drive -> -> 3 `i `uc ]
+[; ;APDS9960.c: 216: val &= 0b11111100;
+"216
+[e =& _val -> -> 252 `i `uc ]
+[; ;APDS9960.c: 217: val |= drive;
+"217
+[e =| _val _drive ]
+[; ;APDS9960.c: 220: if( !wireWriteDataByte(0x8F, val) ) {
+"220
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 143 `i `uc _val -> 0 `i 135  ]
+{
+[; ;APDS9960.c: 221: return 0;
+"221
+[e ) -> -> 0 `i `uc ]
+[e $UE 134  ]
+"222
+}
+[e :U 135 ]
+[; ;APDS9960.c: 222: }
+[; ;APDS9960.c: 224: return 1;
+"224
+[e ) -> -> 1 `i `uc ]
+[e $UE 134  ]
+[; ;APDS9960.c: 225: }
+"225
+[e :UE 134 ]
+}
+"228
+[v _setProxIntLowThresh `(uc ~T0 @X0 1 ef1`uc ]
+"229
+{
+[; ;APDS9960.c: 228: bool setProxIntLowThresh(uint8_t threshold)
+[; ;APDS9960.c: 229: {
+[e :U _setProxIntLowThresh ]
+"228
+[v _threshold `uc ~T0 @X0 1 r1 ]
+"229
+[f ]
+[; ;APDS9960.c: 230: if( !wireWriteDataByte(0x89, threshold) ) {
+"230
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 137 `i `uc _threshold -> 0 `i 137  ]
+{
+[; ;APDS9960.c: 231: return 0;
+"231
+[e ) -> -> 0 `i `uc ]
+[e $UE 136  ]
+"232
+}
+[e :U 137 ]
+[; ;APDS9960.c: 232: }
+[; ;APDS9960.c: 234: return 1;
+"234
+[e ) -> -> 1 `i `uc ]
+[e $UE 136  ]
+[; ;APDS9960.c: 235: }
+"235
+[e :UE 136 ]
+}
+"238
+[v _setProxIntHighThresh `(uc ~T0 @X0 1 ef1`uc ]
+"239
+{
+[; ;APDS9960.c: 238: bool setProxIntHighThresh(uint8_t threshold)
+[; ;APDS9960.c: 239: {
+[e :U _setProxIntHighThresh ]
+"238
+[v _threshold `uc ~T0 @X0 1 r1 ]
+"239
+[f ]
+[; ;APDS9960.c: 240: if( !wireWriteDataByte(0x8B, threshold) ) {
+"240
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 139 `i `uc _threshold -> 0 `i 139  ]
+{
+[; ;APDS9960.c: 241: return 0;
+"241
+[e ) -> -> 0 `i `uc ]
+[e $UE 138  ]
+"242
+}
+[e :U 139 ]
+[; ;APDS9960.c: 242: }
+[; ;APDS9960.c: 244: return 1;
+"244
+[e ) -> -> 1 `i `uc ]
+[e $UE 138  ]
+[; ;APDS9960.c: 245: }
+"245
+[e :UE 138 ]
+}
+"248
+[v _setLightIntLowThreshold `(uc ~T0 @X0 1 ef1`ui ]
+"249
+{
+[; ;APDS9960.c: 248: bool setLightIntLowThreshold(uint16_t threshold)
+[; ;APDS9960.c: 249: {
+[e :U _setLightIntLowThreshold ]
+"248
+[v _threshold `ui ~T0 @X0 1 r1 ]
+"249
+[f ]
+"250
+[v _val_low `uc ~T0 @X0 1 a ]
+"251
+[v _val_high `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 250: uint8_t val_low;
+[; ;APDS9960.c: 251: uint8_t val_high;
+[; ;APDS9960.c: 254: val_low = threshold & 0x00FF;
+"254
+[e = _val_low -> & _threshold -> -> 255 `i `ui `uc ]
+[; ;APDS9960.c: 255: val_high = (threshold & 0xFF00) >> 8;
+"255
+[e = _val_high -> >> & _threshold -> 65280 `ui -> 8 `i `uc ]
+[; ;APDS9960.c: 258: if( !wireWriteDataByte(0x84, val_low) ) {
+"258
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 132 `i `uc _val_low -> 0 `i 141  ]
+{
+[; ;APDS9960.c: 259: return 0;
+"259
+[e ) -> -> 0 `i `uc ]
+[e $UE 140  ]
+"260
+}
+[e :U 141 ]
+[; ;APDS9960.c: 260: }
+[; ;APDS9960.c: 263: if( !wireWriteDataByte(0x85, val_high) ) {
+"263
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 133 `i `uc _val_high -> 0 `i 142  ]
+{
+[; ;APDS9960.c: 264: return 0;
+"264
+[e ) -> -> 0 `i `uc ]
+[e $UE 140  ]
+"265
+}
+[e :U 142 ]
+[; ;APDS9960.c: 265: }
+[; ;APDS9960.c: 267: return 1;
+"267
+[e ) -> -> 1 `i `uc ]
+[e $UE 140  ]
+[; ;APDS9960.c: 268: }
+"268
+[e :UE 140 ]
+}
+"271
+[v _setLightIntHighThreshold `(uc ~T0 @X0 1 ef1`ui ]
+"272
+{
+[; ;APDS9960.c: 271: bool setLightIntHighThreshold(uint16_t threshold)
+[; ;APDS9960.c: 272: {
+[e :U _setLightIntHighThreshold ]
+"271
+[v _threshold `ui ~T0 @X0 1 r1 ]
+"272
+[f ]
+"273
+[v _val_low `uc ~T0 @X0 1 a ]
+"274
+[v _val_high `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 273: uint8_t val_low;
+[; ;APDS9960.c: 274: uint8_t val_high;
+[; ;APDS9960.c: 277: val_low = threshold & 0x00FF;
+"277
+[e = _val_low -> & _threshold -> -> 255 `i `ui `uc ]
+[; ;APDS9960.c: 278: val_high = (threshold & 0xFF00) >> 8;
+"278
+[e = _val_high -> >> & _threshold -> 65280 `ui -> 8 `i `uc ]
+[; ;APDS9960.c: 281: if( !wireWriteDataByte(0x86, val_low) ) {
+"281
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 134 `i `uc _val_low -> 0 `i 144  ]
+{
+[; ;APDS9960.c: 282: return 0;
+"282
+[e ) -> -> 0 `i `uc ]
+[e $UE 143  ]
+"283
+}
+[e :U 144 ]
+[; ;APDS9960.c: 283: }
+[; ;APDS9960.c: 286: if( !wireWriteDataByte(0x87, val_high) ) {
+"286
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 135 `i `uc _val_high -> 0 `i 145  ]
+{
+[; ;APDS9960.c: 287: return 0;
+"287
+[e ) -> -> 0 `i `uc ]
+[e $UE 143  ]
+"288
+}
+[e :U 145 ]
+[; ;APDS9960.c: 288: }
+[; ;APDS9960.c: 290: return 1;
+"290
+[e ) -> -> 1 `i `uc ]
+[e $UE 143  ]
+[; ;APDS9960.c: 291: }
+"291
+[e :UE 143 ]
+}
+"294
+[v _setGestureEnterThresh `(uc ~T0 @X0 1 ef1`uc ]
+"295
+{
+[; ;APDS9960.c: 294: bool setGestureEnterThresh(uint8_t threshold)
+[; ;APDS9960.c: 295: {
+[e :U _setGestureEnterThresh ]
+"294
+[v _threshold `uc ~T0 @X0 1 r1 ]
+"295
+[f ]
+[; ;APDS9960.c: 296: if( !wireWriteDataByte(0xA0, threshold) ) {
+"296
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 160 `i `uc _threshold -> 0 `i 147  ]
+{
+[; ;APDS9960.c: 297: return 0;
+"297
+[e ) -> -> 0 `i `uc ]
+[e $UE 146  ]
+"298
+}
+[e :U 147 ]
+[; ;APDS9960.c: 298: }
+[; ;APDS9960.c: 300: return 1;
+"300
+[e ) -> -> 1 `i `uc ]
+[e $UE 146  ]
+[; ;APDS9960.c: 301: }
+"301
+[e :UE 146 ]
+}
+"304
+[v _setGestureExitThresh `(uc ~T0 @X0 1 ef1`uc ]
+"305
+{
+[; ;APDS9960.c: 304: bool setGestureExitThresh(uint8_t threshold)
+[; ;APDS9960.c: 305: {
+[e :U _setGestureExitThresh ]
+"304
+[v _threshold `uc ~T0 @X0 1 r1 ]
+"305
+[f ]
+[; ;APDS9960.c: 306: if( !wireWriteDataByte(0xA1, threshold) ) {
+"306
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 161 `i `uc _threshold -> 0 `i 149  ]
+{
+[; ;APDS9960.c: 307: return 0;
+"307
+[e ) -> -> 0 `i `uc ]
+[e $UE 148  ]
+"308
+}
+[e :U 149 ]
+[; ;APDS9960.c: 308: }
+[; ;APDS9960.c: 310: return 1;
+"310
+[e ) -> -> 1 `i `uc ]
+[e $UE 148  ]
+[; ;APDS9960.c: 311: }
+"311
+[e :UE 148 ]
+}
+"314
+[v _setGestureGain `(uc ~T0 @X0 1 ef1`uc ]
+"315
+{
+[; ;APDS9960.c: 314: bool setGestureGain(uint8_t gain)
+[; ;APDS9960.c: 315: {
+[e :U _setGestureGain ]
+"314
+[v _gain `uc ~T0 @X0 1 r1 ]
+"315
+[f ]
+"316
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 316: uint8_t val;
+[; ;APDS9960.c: 319: val = wireReadDataByte(0xA3);
+"319
+[e = _val ( _wireReadDataByte (1 -> -> 163 `i `uc ]
+[; ;APDS9960.c: 323: gain &= 0b00000011;
+"323
+[e =& _gain -> -> 3 `i `uc ]
+[; ;APDS9960.c: 324: gain = gain << 5;
+"324
+[e = _gain -> << -> _gain `i -> 5 `i `uc ]
+[; ;APDS9960.c: 325: val &= 0b10011111;
+"325
+[e =& _val -> -> 159 `i `uc ]
+[; ;APDS9960.c: 326: val |= gain;
+"326
+[e =| _val _gain ]
+[; ;APDS9960.c: 329: if( !wireWriteDataByte(0xA3, val) ) {
+"329
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 163 `i `uc _val -> 0 `i 151  ]
+{
+[; ;APDS9960.c: 330: return 0;
+"330
+[e ) -> -> 0 `i `uc ]
+[e $UE 150  ]
+"331
+}
+[e :U 151 ]
+[; ;APDS9960.c: 331: }
+[; ;APDS9960.c: 333: return 1;
+"333
+[e ) -> -> 1 `i `uc ]
+[e $UE 150  ]
+[; ;APDS9960.c: 334: }
+"334
+[e :UE 150 ]
+}
+"337
+[v _setGestureLEDDrive `(uc ~T0 @X0 1 ef1`uc ]
+"338
+{
+[; ;APDS9960.c: 337: bool setGestureLEDDrive(uint8_t drive)
+[; ;APDS9960.c: 338: {
+[e :U _setGestureLEDDrive ]
+"337
+[v _drive `uc ~T0 @X0 1 r1 ]
+"338
+[f ]
+"339
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 339: uint8_t val;
+[; ;APDS9960.c: 342: val = wireReadDataByte(0xA3);
+"342
+[e = _val ( _wireReadDataByte (1 -> -> 163 `i `uc ]
+[; ;APDS9960.c: 346: drive &= 0b00000011;
+"346
+[e =& _drive -> -> 3 `i `uc ]
+[; ;APDS9960.c: 347: drive = drive << 3;
+"347
+[e = _drive -> << -> _drive `i -> 3 `i `uc ]
+[; ;APDS9960.c: 348: val &= 0b11100111;
+"348
+[e =& _val -> -> 231 `i `uc ]
+[; ;APDS9960.c: 349: val |= drive;
+"349
+[e =| _val _drive ]
+[; ;APDS9960.c: 352: if( !wireWriteDataByte(0xA3, val) ) {
+"352
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 163 `i `uc _val -> 0 `i 153  ]
+{
+[; ;APDS9960.c: 353: return 0;
+"353
+[e ) -> -> 0 `i `uc ]
+[e $UE 152  ]
+"354
+}
+[e :U 153 ]
+[; ;APDS9960.c: 354: }
+[; ;APDS9960.c: 356: return 1;
+"356
+[e ) -> -> 1 `i `uc ]
+[e $UE 152  ]
+[; ;APDS9960.c: 357: }
+"357
+[e :UE 152 ]
+}
+"360
+[v _setGestureWaitTime `(uc ~T0 @X0 1 ef1`uc ]
+"361
+{
+[; ;APDS9960.c: 360: bool setGestureWaitTime(uint8_t time)
+[; ;APDS9960.c: 361: {
+[e :U _setGestureWaitTime ]
+"360
+[v _time `uc ~T0 @X0 1 r1 ]
+"361
+[f ]
+"362
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 362: uint8_t val;
+[; ;APDS9960.c: 365: val = wireReadDataByte(0xA3);
+"365
+[e = _val ( _wireReadDataByte (1 -> -> 163 `i `uc ]
+[; ;APDS9960.c: 368: time &= 0b00000111;
+"368
+[e =& _time -> -> 7 `i `uc ]
+[; ;APDS9960.c: 369: val &= 0b11111000;
+"369
+[e =& _val -> -> 248 `i `uc ]
+[; ;APDS9960.c: 370: val |= time;
+"370
+[e =| _val _time ]
+[; ;APDS9960.c: 373: if( !wireWriteDataByte(0xA3, val) ) {
+"373
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 163 `i `uc _val -> 0 `i 155  ]
+{
+[; ;APDS9960.c: 374: return 0;
+"374
+[e ) -> -> 0 `i `uc ]
+[e $UE 154  ]
+"375
+}
+[e :U 155 ]
+[; ;APDS9960.c: 375: }
+[; ;APDS9960.c: 377: return 1;
+"377
+[e ) -> -> 1 `i `uc ]
+[e $UE 154  ]
+[; ;APDS9960.c: 378: }
+"378
+[e :UE 154 ]
+}
+"381
+[v _setGestureIntEnable `(uc ~T0 @X0 1 ef1`uc ]
+"382
+{
+[; ;APDS9960.c: 381: bool setGestureIntEnable(uint8_t enable)
+[; ;APDS9960.c: 382: {
+[e :U _setGestureIntEnable ]
+"381
+[v _enable `uc ~T0 @X0 1 r1 ]
+"382
+[f ]
+"383
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 383: uint8_t val;
+[; ;APDS9960.c: 386: val = wireReadDataByte(0xAB);
+"386
+[e = _val ( _wireReadDataByte (1 -> -> 171 `i `uc ]
+[; ;APDS9960.c: 389: enable &= 0b00000001;
+"389
+[e =& _enable -> -> 1 `i `uc ]
+[; ;APDS9960.c: 390: enable = enable << 1;
+"390
+[e = _enable -> << -> _enable `i -> 1 `i `uc ]
+[; ;APDS9960.c: 391: val &= 0b11111101;
+"391
+[e =& _val -> -> 253 `i `uc ]
+[; ;APDS9960.c: 392: val |= enable;
+"392
+[e =| _val _enable ]
+[; ;APDS9960.c: 395: if( !wireWriteDataByte(0xAB, val) ) {
+"395
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 171 `i `uc _val -> 0 `i 157  ]
+{
+[; ;APDS9960.c: 396: return 0;
+"396
+[e ) -> -> 0 `i `uc ]
+[e $UE 156  ]
+"397
+}
+[e :U 157 ]
+[; ;APDS9960.c: 397: }
+[; ;APDS9960.c: 399: return 1;
+"399
+[e ) -> -> 1 `i `uc ]
+[e $UE 156  ]
+[; ;APDS9960.c: 400: }
+"400
+[e :UE 156 ]
+}
+"403
+[v _enableGestureSensor `(uc ~T0 @X0 1 ef1`uc ]
+"404
+{
+[; ;APDS9960.c: 403: bool enableGestureSensor ( bool interrupts)
+[; ;APDS9960.c: 404: {
+[e :U _enableGestureSensor ]
+"403
+[v _interrupts `uc ~T0 @X0 1 r1 ]
+"404
+[f ]
+[; ;APDS9960.c: 412: resetGestureParameters();
+"412
+[e ( _resetGestureParameters ..  ]
+[; ;APDS9960.c: 413: if( !wireWriteDataByte(0x83, 0xFF) ) {
+"413
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 131 `i `uc -> -> 255 `i `uc -> 0 `i 159  ]
+{
+[; ;APDS9960.c: 414: return 0;
+"414
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"415
+}
+[e :U 159 ]
+[; ;APDS9960.c: 415: }
+[; ;APDS9960.c: 416: if( !wireWriteDataByte(0x8E, 0x89) ) {
+"416
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 142 `i `uc -> -> 137 `i `uc -> 0 `i 160  ]
+{
+[; ;APDS9960.c: 417: return 0;
+"417
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"418
+}
+[e :U 160 ]
+[; ;APDS9960.c: 418: }
+[; ;APDS9960.c: 419: if( !setLEDBoost(3) ) {
+"419
+[e $ ! ! != -> ( _setLEDBoost (1 -> -> 3 `i `uc `i -> -> -> 0 `i `uc `i 161  ]
+{
+[; ;APDS9960.c: 420: return 0;
+"420
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"421
+}
+[e :U 161 ]
+[; ;APDS9960.c: 421: }
+[; ;APDS9960.c: 422: if( interrupts ) {
+"422
+[e $ ! != -> _interrupts `i -> -> -> 0 `i `uc `i 162  ]
+{
+[; ;APDS9960.c: 423: if( !setGestureIntEnable(1) ) {
+"423
+[e $ ! ! != -> ( _setGestureIntEnable (1 -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 163  ]
+{
+[; ;APDS9960.c: 424: return 0;
+"424
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"425
+}
+[e :U 163 ]
+"426
+}
+[; ;APDS9960.c: 425: }
+[; ;APDS9960.c: 426: } else {
+[e $U 164  ]
+[e :U 162 ]
+{
+[; ;APDS9960.c: 427: if( !setGestureIntEnable(0) ) {
+"427
+[e $ ! ! != -> ( _setGestureIntEnable (1 -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 165  ]
+{
+[; ;APDS9960.c: 428: return 0;
+"428
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"429
+}
+[e :U 165 ]
+"430
+}
+[e :U 164 ]
+[; ;APDS9960.c: 429: }
+[; ;APDS9960.c: 430: }
+[; ;APDS9960.c: 431: if( !setGestureMode(1) ) {
+"431
+[e $ ! ! != -> ( _setGestureMode (1 -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 166  ]
+{
+[; ;APDS9960.c: 432: return 0;
+"432
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"433
+}
+[e :U 166 ]
+[; ;APDS9960.c: 433: }
+[; ;APDS9960.c: 434: if( !enablePower() ){
+"434
+[e $ ! ! != -> ( _enablePower ..  `i -> -> -> 0 `i `uc `i 167  ]
+{
+[; ;APDS9960.c: 435: return 0;
+"435
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"436
+}
+[e :U 167 ]
+[; ;APDS9960.c: 436: }
+[; ;APDS9960.c: 437: if( !setMode(3, 1) ) {
+"437
+[e $ ! ! != -> ( _setMode (2 , -> -> 3 `i `uc -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 168  ]
+{
+[; ;APDS9960.c: 438: return 0;
+"438
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"439
+}
+[e :U 168 ]
+[; ;APDS9960.c: 439: }
+[; ;APDS9960.c: 440: if( !setMode(2, 1) ) {
+"440
+[e $ ! ! != -> ( _setMode (2 , -> -> 2 `i `uc -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 169  ]
+{
+[; ;APDS9960.c: 441: return 0;
+"441
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"442
+}
+[e :U 169 ]
+[; ;APDS9960.c: 442: }
+[; ;APDS9960.c: 443: if( !setMode(6, 1) ) {
+"443
+[e $ ! ! != -> ( _setMode (2 , -> -> 6 `i `uc -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 170  ]
+{
+[; ;APDS9960.c: 444: return 0;
+"444
+[e ) -> -> 0 `i `uc ]
+[e $UE 158  ]
+"445
+}
+[e :U 170 ]
+[; ;APDS9960.c: 445: }
+[; ;APDS9960.c: 447: return 1;
+"447
+[e ) -> -> 1 `i `uc ]
+[e $UE 158  ]
+[; ;APDS9960.c: 448: }
+"448
+[e :UE 158 ]
+}
+"451
+[v _resetGestureParameters `(v ~T0 @X0 1 ef ]
+"452
+{
+[; ;APDS9960.c: 451: void resetGestureParameters()
+[; ;APDS9960.c: 452: {
+[e :U _resetGestureParameters ]
+[f ]
+[; ;APDS9960.c: 454: gesture_data_.index = 0;
+"454
+[e = . _gesture_data_ 4 -> -> 0 `i `uc ]
+[; ;APDS9960.c: 455: gesture_data_.total_gestures = 0;
+"455
+[e = . _gesture_data_ 5 -> -> 0 `i `uc ]
+[; ;APDS9960.c: 457: gesture_ud_delta_ = 0;
+"457
+[e = _gesture_ud_delta_ -> 0 `i ]
+[; ;APDS9960.c: 458: gesture_lr_delta_ = 0;
+"458
+[e = _gesture_lr_delta_ -> 0 `i ]
+[; ;APDS9960.c: 460: gesture_ud_count_ = 0;
+"460
+[e = _gesture_ud_count_ -> 0 `i ]
+[; ;APDS9960.c: 461: gesture_lr_count_ = 0;
+"461
+[e = _gesture_lr_count_ -> 0 `i ]
+[; ;APDS9960.c: 463: gesture_near_count_ = 0;
+"463
+[e = _gesture_near_count_ -> 0 `i ]
+[; ;APDS9960.c: 464: gesture_far_count_ = 0;
+"464
+[e = _gesture_far_count_ -> 0 `i ]
+[; ;APDS9960.c: 466: gesture_state_ = 0;
+"466
+[e = _gesture_state_ -> 0 `i ]
+[; ;APDS9960.c: 467: gesture_motion_ = DIR_NONE;
+"467
+[e = _gesture_motion_ -> . `E70 0 `i ]
+[; ;APDS9960.c: 468: }
+"468
+[e :UE 171 ]
+}
+"478
+[v _setLEDBoost `(uc ~T0 @X0 1 ef1`uc ]
+"479
+{
+[; ;APDS9960.c: 478: bool setLEDBoost(uint8_t boost)
+[; ;APDS9960.c: 479: {
+[e :U _setLEDBoost ]
+"478
+[v _boost `uc ~T0 @X0 1 r1 ]
+"479
+[f ]
+"480
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 480: uint8_t val;
+[; ;APDS9960.c: 483: val=wireReadDataByte(0x90);
+"483
+[e = _val ( _wireReadDataByte (1 -> -> 144 `i `uc ]
+[; ;APDS9960.c: 486: boost &= 0b00000011;
+"486
+[e =& _boost -> -> 3 `i `uc ]
+[; ;APDS9960.c: 487: boost = boost << 4;
+"487
+[e = _boost -> << -> _boost `i -> 4 `i `uc ]
+[; ;APDS9960.c: 488: val &= 0b11001111;
+"488
+[e =& _val -> -> 207 `i `uc ]
+[; ;APDS9960.c: 489: val |= boost;
+"489
+[e =| _val _boost ]
+[; ;APDS9960.c: 492: if( !wireWriteDataByte(0x90, val) ) {
+"492
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 144 `i `uc _val -> 0 `i 173  ]
+{
+[; ;APDS9960.c: 493: return 0;
+"493
+[e ) -> -> 0 `i `uc ]
+[e $UE 172  ]
+"494
+}
+[e :U 173 ]
+[; ;APDS9960.c: 494: }
+[; ;APDS9960.c: 496: return 1;
+"496
+[e ) -> -> 1 `i `uc ]
+[e $UE 172  ]
+[; ;APDS9960.c: 497: }
+"497
+[e :UE 172 ]
+}
+"500
+[v _setGestureMode `(uc ~T0 @X0 1 ef1`uc ]
+"501
+{
+[; ;APDS9960.c: 500: bool setGestureMode(uint8_t mode)
+[; ;APDS9960.c: 501: {
+[e :U _setGestureMode ]
+"500
+[v _mode `uc ~T0 @X0 1 r1 ]
+"501
+[f ]
+"502
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 502: uint8_t val;
+[; ;APDS9960.c: 505: val = wireReadDataByte(0xAB);
+"505
+[e = _val ( _wireReadDataByte (1 -> -> 171 `i `uc ]
+[; ;APDS9960.c: 508: mode &= 0b00000001;
+"508
+[e =& _mode -> -> 1 `i `uc ]
+[; ;APDS9960.c: 509: val &= 0b11111110;
+"509
+[e =& _val -> -> 254 `i `uc ]
+[; ;APDS9960.c: 510: val |= mode;
+"510
+[e =| _val _mode ]
+[; ;APDS9960.c: 513: if( !wireWriteDataByte(0xAB, val) ) {
+"513
+[e $ ! ! != ( _wireWriteDataByte (2 , -> -> 171 `i `uc _val -> 0 `i 175  ]
+{
+[; ;APDS9960.c: 514: return 0;
+"514
+[e ) -> -> 0 `i `uc ]
+[e $UE 174  ]
+"515
+}
+[e :U 175 ]
+[; ;APDS9960.c: 515: }
+[; ;APDS9960.c: 517: return 1;
+"517
+[e ) -> -> 1 `i `uc ]
+[e $UE 174  ]
+[; ;APDS9960.c: 518: }
+"518
+[e :UE 174 ]
+}
+"521
+[v _enablePower `(uc ~T0 @X0 1 ef ]
+"522
+{
+[; ;APDS9960.c: 521: bool enablePower()
+[; ;APDS9960.c: 522: {
+[e :U _enablePower ]
+[f ]
+[; ;APDS9960.c: 523: if( !setMode(0, 1) ) {
+"523
+[e $ ! ! != -> ( _setMode (2 , -> -> 0 `i `uc -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 177  ]
+{
+[; ;APDS9960.c: 524: return 0;
+"524
+[e ) -> -> 0 `i `uc ]
+[e $UE 176  ]
+"525
+}
+[e :U 177 ]
+[; ;APDS9960.c: 525: }
+[; ;APDS9960.c: 527: return 1;
+"527
+[e ) -> -> 1 `i `uc ]
+[e $UE 176  ]
+[; ;APDS9960.c: 528: }
+"528
+[e :UE 176 ]
+}
+"531
+[v _isGestureAvailable `(uc ~T0 @X0 1 ef ]
+"532
+{
+[; ;APDS9960.c: 531: bool isGestureAvailable()
+[; ;APDS9960.c: 532: {
+[e :U _isGestureAvailable ]
+[f ]
+"533
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 533: uint8_t val;
+[; ;APDS9960.c: 536: val=wireReadDataByte(0xAF);
+"536
+[e = _val ( _wireReadDataByte (1 -> -> 175 `i `uc ]
+[; ;APDS9960.c: 539: val &= 0b00000001;
+"539
+[e =& _val -> -> 1 `i `uc ]
+[; ;APDS9960.c: 542: if( val == 1) {
+"542
+[e $ ! == -> _val `i -> 1 `i 179  ]
+{
+[; ;APDS9960.c: 543: return 1;
+"543
+[e ) -> -> 1 `i `uc ]
+[e $UE 178  ]
+"544
+}
+[; ;APDS9960.c: 544: } else {
+[e $U 180  ]
+[e :U 179 ]
+{
+[; ;APDS9960.c: 545: return 0;
+"545
+[e ) -> -> 0 `i `uc ]
+[e $UE 178  ]
+"546
+}
+[e :U 180 ]
+[; ;APDS9960.c: 546: }
+[; ;APDS9960.c: 547: }
+"547
+[e :UE 178 ]
+}
+"550
+[v _readGesture `(i ~T0 @X0 1 ef ]
+"551
+{
+[; ;APDS9960.c: 550: int readGesture()
+[; ;APDS9960.c: 551: {
+[e :U _readGesture ]
+[f ]
+"552
+[v _fifo_level `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 552: uint8_t fifo_level = 0;
+[e = _fifo_level -> -> 0 `i `uc ]
+"553
+[v _bytes_read `i ~T0 @X0 1 a ]
+[; ;APDS9960.c: 553: int bytes_read = 0;
+[e = _bytes_read -> 0 `i ]
+"554
+[v _fifo_data `uc ~T0 @X0 -> 64 `i a ]
+"555
+[v _fifo_data2 `uc ~T0 @X0 -> 64 `i a ]
+"556
+[v _gstatus `uc ~T0 @X0 1 a ]
+"557
+[v _motion `i ~T0 @X0 1 a ]
+"558
+[v _i `i ~T0 @X0 1 a ]
+[; ;APDS9960.c: 554: uint8_t fifo_data[64];
+[; ;APDS9960.c: 555: uint8_t fifo_data2[64];
+[; ;APDS9960.c: 556: uint8_t gstatus;
+[; ;APDS9960.c: 557: int motion;
+[; ;APDS9960.c: 558: int i;
+[; ;APDS9960.c: 561: if( !isGestureAvailable() || !(getMode() & 0b01000001) ) {
+"561
+[e $ ! || ! != -> ( _isGestureAvailable ..  `i -> -> -> 0 `i `uc `i ! != & -> ( _getMode ..  `i -> 65 `i -> 0 `i 182  ]
+{
+[; ;APDS9960.c: 562: return DIR_NONE;
+"562
+[e ) -> . `E70 0 `i ]
+[e $UE 181  ]
+"563
+}
+[e :U 182 ]
+[; ;APDS9960.c: 563: }
+[; ;APDS9960.c: 566: while(1) {
+"566
+[e :U 184 ]
+{
+[; ;APDS9960.c: 569: _delay((unsigned long)((30)*(20000000/4000.0)));
+"569
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;APDS9960.c: 572: gstatus = wireReadDataByte(0xAF);
+"572
+[e = _gstatus ( _wireReadDataByte (1 -> -> 175 `i `uc ]
+[; ;APDS9960.c: 577: if( (gstatus & 0b00000001) == 0b00000001 )
+"577
+[e $ ! == & -> _gstatus `i -> 1 `i -> 1 `i 186  ]
+[; ;APDS9960.c: 578: {
+"578
+{
+[; ;APDS9960.c: 580: fifo_level= wireReadDataByte(0xAE);
+"580
+[e = _fifo_level ( _wireReadDataByte (1 -> -> 174 `i `uc ]
+[; ;APDS9960.c: 584: if( fifo_level > 0) {
+"584
+[e $ ! > -> _fifo_level `i -> 0 `i 187  ]
+{
+[; ;APDS9960.c: 586: if(fifo_level < 17)
+"586
+[e $ ! < -> _fifo_level `i -> 17 `i 188  ]
+[; ;APDS9960.c: 587: {
+"587
+{
+[; ;APDS9960.c: 588: bytes_read = wireReadDataBlock( 0xFC,
+[; ;APDS9960.c: 589: (uint8_t*)fifo_data,
+[; ;APDS9960.c: 590: (fifo_level * 4) );
+"590
+[e = _bytes_read ( _wireReadDataBlock (3 , , -> -> 252 `i `uc &U _fifo_data -> * -> _fifo_level `i -> 4 `i `ui ]
+"591
+}
+[; ;APDS9960.c: 591: } else
+[e $U 189  ]
+[e :U 188 ]
+[; ;APDS9960.c: 592: {
+"592
+{
+[; ;APDS9960.c: 593: bytes_read = wireReadDataBlock( 0xFC,
+[; ;APDS9960.c: 594: (uint8_t*)fifo_data2,
+[; ;APDS9960.c: 595: (fifo_level * 4) );
+"595
+[e = _bytes_read ( _wireReadDataBlock (3 , , -> -> 252 `i `uc &U _fifo_data2 -> * -> _fifo_level `i -> 4 `i `ui ]
+"596
+}
+[e :U 189 ]
+[; ;APDS9960.c: 596: }
+[; ;APDS9960.c: 599: if( bytes_read == -1 )
+"599
+[e $ ! == _bytes_read -U -> 1 `i 190  ]
+[; ;APDS9960.c: 600: {
+"600
+{
+[; ;APDS9960.c: 601: return 0xFF;
+"601
+[e ) -> 255 `i ]
+[e $UE 181  ]
+"602
+}
+[e :U 190 ]
+[; ;APDS9960.c: 602: }
+[; ;APDS9960.c: 606: if( bytes_read >= 4 )
+"606
+[e $ ! >= _bytes_read -> 4 `i 191  ]
+[; ;APDS9960.c: 607: {
+"607
+{
+[; ;APDS9960.c: 609: for( i = 0; i < bytes_read; i += 4 ) {
+"609
+{
+[e = _i -> 0 `i ]
+[e $U 195  ]
+[e :U 192 ]
+{
+[; ;APDS9960.c: 610: gesture_data_.u_data[gesture_data_.index] = fifo_data[i + 0];
+"610
+[e = *U + &U . _gesture_data_ 0 * -> . _gesture_data_ 4 `ux -> -> # *U &U . _gesture_data_ 0 `ui `ux *U + &U _fifo_data * -> -> + _i -> 0 `i `ui `ux -> -> # *U &U _fifo_data `ui `ux ]
+[; ;APDS9960.c: 612: gesture_data_.d_data[gesture_data_.index] = fifo_data[i + 1];
+"612
+[e = *U + &U . _gesture_data_ 1 * -> . _gesture_data_ 4 `ux -> -> # *U &U . _gesture_data_ 1 `ui `ux *U + &U _fifo_data * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _fifo_data `ui `ux ]
+[; ;APDS9960.c: 614: gesture_data_.l_data[gesture_data_.index] = fifo_data[i + 2];
+"614
+[e = *U + &U . _gesture_data_ 2 * -> . _gesture_data_ 4 `ux -> -> # *U &U . _gesture_data_ 2 `ui `ux *U + &U _fifo_data * -> -> + _i -> 2 `i `ui `ux -> -> # *U &U _fifo_data `ui `ux ]
+[; ;APDS9960.c: 616: gesture_data_.r_data[gesture_data_.index] = fifo_data[i + 3];
+"616
+[e = *U + &U . _gesture_data_ 3 * -> . _gesture_data_ 4 `ux -> -> # *U &U . _gesture_data_ 3 `ui `ux *U + &U _fifo_data * -> -> + _i -> 3 `i `ui `ux -> -> # *U &U _fifo_data `ui `ux ]
+[; ;APDS9960.c: 618: gesture_data_.index++;
+"618
+[e ++ . _gesture_data_ 4 -> -> 1 `i `uc ]
+[; ;APDS9960.c: 619: gesture_data_.total_gestures++;
+"619
+[e ++ . _gesture_data_ 5 -> -> 1 `i `uc ]
+"620
+}
+"609
+[e =+ _i -> 4 `i ]
+[e :U 195 ]
+[e $ < _i _bytes_read 192  ]
+[e :U 193 ]
+"620
+}
+[; ;APDS9960.c: 620: }
+[; ;APDS9960.c: 623: if( processGestureData() )
+"623
+[e $ ! != -> ( _processGestureData ..  `i -> -> -> 0 `i `uc `i 196  ]
+[; ;APDS9960.c: 624: {
+"624
+{
+[; ;APDS9960.c: 626: if( decodeGesture() ) {
+"626
+[e $ ! != -> ( _decodeGesture ..  `i -> -> -> 0 `i `uc `i 197  ]
+{
+"628
+}
+[e :U 197 ]
+"629
+}
+[e :U 196 ]
+[; ;APDS9960.c: 628: }
+[; ;APDS9960.c: 629: }
+[; ;APDS9960.c: 632: gesture_data_.index = 0;
+"632
+[e = . _gesture_data_ 4 -> -> 0 `i `uc ]
+[; ;APDS9960.c: 633: gesture_data_.total_gestures = 0;
+"633
+[e = . _gesture_data_ 5 -> -> 0 `i `uc ]
+"634
+}
+[e :U 191 ]
+"635
+}
+[e :U 187 ]
+"636
+}
+[; ;APDS9960.c: 634: }
+[; ;APDS9960.c: 635: }
+[; ;APDS9960.c: 636: } else {
+[e $U 198  ]
+[e :U 186 ]
+{
+[; ;APDS9960.c: 639: _delay((unsigned long)((30)*(20000000/4000.0)));
+"639
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;APDS9960.c: 640: decodeGesture();
+"640
+[e ( _decodeGesture ..  ]
+[; ;APDS9960.c: 641: motion = gesture_motion_;
+"641
+[e = _motion _gesture_motion_ ]
+[; ;APDS9960.c: 643: resetGestureParameters();
+"643
+[e ( _resetGestureParameters ..  ]
+[; ;APDS9960.c: 645: return motion;
+"645
+[e ) _motion ]
+[e $UE 181  ]
+"646
+}
+[e :U 198 ]
+"647
+}
+[e :U 183 ]
+"566
+[e $U 184  ]
+[e :U 185 ]
+[; ;APDS9960.c: 646: }
+[; ;APDS9960.c: 647: }
+[; ;APDS9960.c: 648: }
+"648
+[e :UE 181 ]
+}
+"651
+[v _processGestureData `(uc ~T0 @X0 1 ef ]
+"652
+{
+[; ;APDS9960.c: 651: bool processGestureData()
+[; ;APDS9960.c: 652: {
+[e :U _processGestureData ]
+[f ]
+"653
+[v _u_first `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 653: uint8_t u_first = 0;
+[e = _u_first -> -> 0 `i `uc ]
+"654
+[v _d_first `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 654: uint8_t d_first = 0;
+[e = _d_first -> -> 0 `i `uc ]
+"655
+[v _l_first `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 655: uint8_t l_first = 0;
+[e = _l_first -> -> 0 `i `uc ]
+"656
+[v _r_first `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 656: uint8_t r_first = 0;
+[e = _r_first -> -> 0 `i `uc ]
+"657
+[v _u_last `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 657: uint8_t u_last = 0;
+[e = _u_last -> -> 0 `i `uc ]
+"658
+[v _d_last `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 658: uint8_t d_last = 0;
+[e = _d_last -> -> 0 `i `uc ]
+"659
+[v _l_last `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 659: uint8_t l_last = 0;
+[e = _l_last -> -> 0 `i `uc ]
+"660
+[v _r_last `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 660: uint8_t r_last = 0;
+[e = _r_last -> -> 0 `i `uc ]
+"661
+[v _ud_ratio_first `i ~T0 @X0 1 a ]
+"662
+[v _lr_ratio_first `i ~T0 @X0 1 a ]
+"663
+[v _ud_ratio_last `i ~T0 @X0 1 a ]
+"664
+[v _lr_ratio_last `i ~T0 @X0 1 a ]
+"665
+[v _ud_delta `i ~T0 @X0 1 a ]
+"666
+[v _lr_delta `i ~T0 @X0 1 a ]
+"667
+[v _i `i ~T0 @X0 1 a ]
+[; ;APDS9960.c: 661: int ud_ratio_first;
+[; ;APDS9960.c: 662: int lr_ratio_first;
+[; ;APDS9960.c: 663: int ud_ratio_last;
+[; ;APDS9960.c: 664: int lr_ratio_last;
+[; ;APDS9960.c: 665: int ud_delta;
+[; ;APDS9960.c: 666: int lr_delta;
+[; ;APDS9960.c: 667: int i;
+[; ;APDS9960.c: 670: if( gesture_data_.total_gestures <= 4 ) {
+"670
+[e $ ! <= -> . _gesture_data_ 5 `i -> 4 `i 200  ]
+{
+[; ;APDS9960.c: 671: return 0;
+"671
+[e ) -> -> 0 `i `uc ]
+[e $UE 199  ]
+"672
+}
+[e :U 200 ]
+[; ;APDS9960.c: 672: }
+[; ;APDS9960.c: 675: if( (gesture_data_.total_gestures <= 32) && (gesture_data_.total_gestures > 0) ) {
+"675
+[e $ ! && <= -> . _gesture_data_ 5 `i -> 32 `i > -> . _gesture_data_ 5 `i -> 0 `i 201  ]
+{
+[; ;APDS9960.c: 679: for( i = 0; i < gesture_data_.total_gestures; i++ ) {
+"679
+{
+[e = _i -> 0 `i ]
+[e $U 205  ]
+[e :U 202 ]
+{
+[; ;APDS9960.c: 680: if( (gesture_data_.u_data[i] > 10) &&
+[; ;APDS9960.c: 681: (gesture_data_.d_data[i] > 10) &&
+[; ;APDS9960.c: 682: (gesture_data_.l_data[i] > 10) &&
+[; ;APDS9960.c: 683: (gesture_data_.r_data[i] > 10) ) {
+"683
+[e $ ! && && && > -> *U + &U . _gesture_data_ 0 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 0 `ui `ux `i -> 10 `i > -> *U + &U . _gesture_data_ 1 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 1 `ui `ux `i -> 10 `i > -> *U + &U . _gesture_data_ 2 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 2 `ui `ux `i -> 10 `i > -> *U + &U . _gesture_data_ 3 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 3 `ui `ux `i -> 10 `i 206  ]
+{
+[; ;APDS9960.c: 685: u_first = gesture_data_.u_data[i];
+"685
+[e = _u_first *U + &U . _gesture_data_ 0 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 0 `ui `ux ]
+[; ;APDS9960.c: 686: d_first = gesture_data_.d_data[i];
+"686
+[e = _d_first *U + &U . _gesture_data_ 1 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 1 `ui `ux ]
+[; ;APDS9960.c: 687: l_first = gesture_data_.l_data[i];
+"687
+[e = _l_first *U + &U . _gesture_data_ 2 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 2 `ui `ux ]
+[; ;APDS9960.c: 688: r_first = gesture_data_.r_data[i];
+"688
+[e = _r_first *U + &U . _gesture_data_ 3 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 3 `ui `ux ]
+[; ;APDS9960.c: 689: break;
+"689
+[e $U 203  ]
+"690
+}
+[e :U 206 ]
+"691
+}
+"679
+[e ++ _i -> 1 `i ]
+[e :U 205 ]
+[e $ < _i -> . _gesture_data_ 5 `i 202  ]
+[e :U 203 ]
+"691
+}
+[; ;APDS9960.c: 690: }
+[; ;APDS9960.c: 691: }
+[; ;APDS9960.c: 694: if( (u_first == 0) || (d_first == 0) || (l_first == 0) || (r_first == 0) ) {
+"694
+[e $ ! || || || == -> _u_first `i -> 0 `i == -> _d_first `i -> 0 `i == -> _l_first `i -> 0 `i == -> _r_first `i -> 0 `i 207  ]
+{
+[; ;APDS9960.c: 697: return 0;
+"697
+[e ) -> -> 0 `i `uc ]
+[e $UE 199  ]
+"698
+}
+[e :U 207 ]
+[; ;APDS9960.c: 698: }
+[; ;APDS9960.c: 700: for( i = gesture_data_.total_gestures - 1; i >= 0; i-- ) {
+"700
+{
+[e = _i - -> . _gesture_data_ 5 `i -> 1 `i ]
+[e $ >= _i -> 0 `i 208  ]
+[e $U 209  ]
+[e :U 208 ]
+{
+[; ;APDS9960.c: 702: if( (gesture_data_.u_data[i] > 10) &&
+[; ;APDS9960.c: 703: (gesture_data_.d_data[i] > 10) &&
+[; ;APDS9960.c: 704: (gesture_data_.l_data[i] > 10) &&
+[; ;APDS9960.c: 705: (gesture_data_.r_data[i] > 10) ) {
+"705
+[e $ ! && && && > -> *U + &U . _gesture_data_ 0 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 0 `ui `ux `i -> 10 `i > -> *U + &U . _gesture_data_ 1 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 1 `ui `ux `i -> 10 `i > -> *U + &U . _gesture_data_ 2 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 2 `ui `ux `i -> 10 `i > -> *U + &U . _gesture_data_ 3 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 3 `ui `ux `i -> 10 `i 211  ]
+{
+[; ;APDS9960.c: 707: u_last = gesture_data_.u_data[i];
+"707
+[e = _u_last *U + &U . _gesture_data_ 0 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 0 `ui `ux ]
+[; ;APDS9960.c: 708: d_last = gesture_data_.d_data[i];
+"708
+[e = _d_last *U + &U . _gesture_data_ 1 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 1 `ui `ux ]
+[; ;APDS9960.c: 709: l_last = gesture_data_.l_data[i];
+"709
+[e = _l_last *U + &U . _gesture_data_ 2 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 2 `ui `ux ]
+[; ;APDS9960.c: 710: r_last = gesture_data_.r_data[i];
+"710
+[e = _r_last *U + &U . _gesture_data_ 3 * -> -> _i `ui `ux -> -> # *U &U . _gesture_data_ 3 `ui `ux ]
+[; ;APDS9960.c: 711: break;
+"711
+[e $U 209  ]
+"712
+}
+[e :U 211 ]
+"713
+}
+"700
+[e -- _i -> 1 `i ]
+[e $ >= _i -> 0 `i 208  ]
+[e :U 209 ]
+"713
+}
+"714
+}
+[e :U 201 ]
+[; ;APDS9960.c: 712: }
+[; ;APDS9960.c: 713: }
+[; ;APDS9960.c: 714: }
+[; ;APDS9960.c: 717: ud_ratio_first = ((u_first - d_first) * 100) / (u_first + d_first);
+"717
+[e = _ud_ratio_first / * - -> _u_first `i -> _d_first `i -> 100 `i + -> _u_first `i -> _d_first `i ]
+[; ;APDS9960.c: 718: lr_ratio_first = ((l_first - r_first) * 100) / (l_first + r_first);
+"718
+[e = _lr_ratio_first / * - -> _l_first `i -> _r_first `i -> 100 `i + -> _l_first `i -> _r_first `i ]
+[; ;APDS9960.c: 719: ud_ratio_last = ((u_last - d_last) * 100) / (u_last + d_last);
+"719
+[e = _ud_ratio_last / * - -> _u_last `i -> _d_last `i -> 100 `i + -> _u_last `i -> _d_last `i ]
+[; ;APDS9960.c: 720: lr_ratio_last = ((l_last - r_last) * 100) / (l_last + r_last);
+"720
+[e = _lr_ratio_last / * - -> _l_last `i -> _r_last `i -> 100 `i + -> _l_last `i -> _r_last `i ]
+[; ;APDS9960.c: 723: ud_delta = ud_ratio_last - ud_ratio_first;
+"723
+[e = _ud_delta - _ud_ratio_last _ud_ratio_first ]
+[; ;APDS9960.c: 724: lr_delta = lr_ratio_last - lr_ratio_first;
+"724
+[e = _lr_delta - _lr_ratio_last _lr_ratio_first ]
+[; ;APDS9960.c: 727: gesture_ud_delta_ += ud_delta;
+"727
+[e =+ _gesture_ud_delta_ _ud_delta ]
+[; ;APDS9960.c: 728: gesture_lr_delta_ += lr_delta;
+"728
+[e =+ _gesture_lr_delta_ _lr_delta ]
+[; ;APDS9960.c: 731: if( gesture_ud_delta_ >= 50 ) {
+"731
+[e $ ! >= _gesture_ud_delta_ -> 50 `i 212  ]
+{
+[; ;APDS9960.c: 732: gesture_ud_count_ = 1;
+"732
+[e = _gesture_ud_count_ -> 1 `i ]
+"733
+}
+[; ;APDS9960.c: 733: } else if( gesture_ud_delta_ <= -50 ) {
+[e $U 213  ]
+[e :U 212 ]
+[e $ ! <= _gesture_ud_delta_ -U -> 50 `i 214  ]
+{
+[; ;APDS9960.c: 734: gesture_ud_count_ = -1;
+"734
+[e = _gesture_ud_count_ -U -> 1 `i ]
+"735
+}
+[; ;APDS9960.c: 735: } else {
+[e $U 215  ]
+[e :U 214 ]
+{
+[; ;APDS9960.c: 736: gesture_ud_count_ = 0;
+"736
+[e = _gesture_ud_count_ -> 0 `i ]
+"737
+}
+[e :U 215 ]
+[e :U 213 ]
+[; ;APDS9960.c: 737: }
+[; ;APDS9960.c: 740: if( gesture_lr_delta_ >= 50 ) {
+"740
+[e $ ! >= _gesture_lr_delta_ -> 50 `i 216  ]
+{
+[; ;APDS9960.c: 741: gesture_lr_count_ = 1;
+"741
+[e = _gesture_lr_count_ -> 1 `i ]
+"742
+}
+[; ;APDS9960.c: 742: } else if( gesture_lr_delta_ <= -50 ) {
+[e $U 217  ]
+[e :U 216 ]
+[e $ ! <= _gesture_lr_delta_ -U -> 50 `i 218  ]
+{
+[; ;APDS9960.c: 743: gesture_lr_count_ = -1;
+"743
+[e = _gesture_lr_count_ -U -> 1 `i ]
+"744
+}
+[; ;APDS9960.c: 744: } else {
+[e $U 219  ]
+[e :U 218 ]
+{
+[; ;APDS9960.c: 745: gesture_lr_count_ = 0;
+"745
+[e = _gesture_lr_count_ -> 0 `i ]
+"746
+}
+[e :U 219 ]
+[e :U 217 ]
+[; ;APDS9960.c: 746: }
+[; ;APDS9960.c: 749: if( (gesture_ud_count_ == 0) && (gesture_lr_count_ == 0) ) {
+"749
+[e $ ! && == _gesture_ud_count_ -> 0 `i == _gesture_lr_count_ -> 0 `i 220  ]
+{
+[; ;APDS9960.c: 750: if( (((ud_delta) > 0 ? (ud_delta) : -(ud_delta)) < 20) && (((lr_delta) > 0 ? (lr_delta) : -(lr_delta)) < 20) ) {
+"750
+[e $ ! && < ? > _ud_delta -> 0 `i : _ud_delta -U _ud_delta -> 20 `i < ? > _lr_delta -> 0 `i : _lr_delta -U _lr_delta -> 20 `i 221  ]
+{
+[; ;APDS9960.c: 753: if( (ud_delta == 0) && (lr_delta == 0) ) {
+"753
+[e $ ! && == _ud_delta -> 0 `i == _lr_delta -> 0 `i 222  ]
+{
+[; ;APDS9960.c: 754: gesture_near_count_++;
+"754
+[e ++ _gesture_near_count_ -> 1 `i ]
+"755
+}
+[; ;APDS9960.c: 755: } else if( (ud_delta != 0) || (lr_delta != 0) ) {
+[e $U 223  ]
+[e :U 222 ]
+[e $ ! || != _ud_delta -> 0 `i != _lr_delta -> 0 `i 224  ]
+{
+[; ;APDS9960.c: 756: gesture_far_count_++;
+"756
+[e ++ _gesture_far_count_ -> 1 `i ]
+"757
+}
+[e :U 224 ]
+"759
+[e :U 223 ]
+[; ;APDS9960.c: 757: }
+[; ;APDS9960.c: 759: if( (gesture_near_count_ >= 10) && (gesture_far_count_ >= 2) ) {
+[e $ ! && >= _gesture_near_count_ -> 10 `i >= _gesture_far_count_ -> 2 `i 225  ]
+{
+[; ;APDS9960.c: 760: if( (ud_delta == 0) && (lr_delta == 0) ) {
+"760
+[e $ ! && == _ud_delta -> 0 `i == _lr_delta -> 0 `i 226  ]
+{
+[; ;APDS9960.c: 761: gesture_state_ = NEAR_STATE;
+"761
+[e = _gesture_state_ -> . `E79 1 `i ]
+"762
+}
+[; ;APDS9960.c: 762: } else if( (ud_delta != 0) && (lr_delta != 0) ) {
+[e $U 227  ]
+[e :U 226 ]
+[e $ ! && != _ud_delta -> 0 `i != _lr_delta -> 0 `i 228  ]
+{
+[; ;APDS9960.c: 763: gesture_state_ = FAR_STATE;
+"763
+[e = _gesture_state_ -> . `E79 2 `i ]
+"764
+}
+[e :U 228 ]
+"765
+[e :U 227 ]
+[; ;APDS9960.c: 764: }
+[; ;APDS9960.c: 765: return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 199  ]
+"766
+}
+[e :U 225 ]
+"767
+}
+[e :U 221 ]
+"768
+}
+[; ;APDS9960.c: 766: }
+[; ;APDS9960.c: 767: }
+[; ;APDS9960.c: 768: } else {
+[e $U 229  ]
+[e :U 220 ]
+{
+[; ;APDS9960.c: 769: if( (((ud_delta) > 0 ? (ud_delta) : -(ud_delta)) < 20) && (((lr_delta) > 0 ? (lr_delta) : -(lr_delta)) < 20) ) {
+"769
+[e $ ! && < ? > _ud_delta -> 0 `i : _ud_delta -U _ud_delta -> 20 `i < ? > _lr_delta -> 0 `i : _lr_delta -U _lr_delta -> 20 `i 230  ]
+{
+[; ;APDS9960.c: 772: if( (ud_delta == 0) && (lr_delta == 0) ) {
+"772
+[e $ ! && == _ud_delta -> 0 `i == _lr_delta -> 0 `i 231  ]
+{
+[; ;APDS9960.c: 773: gesture_near_count_++;
+"773
+[e ++ _gesture_near_count_ -> 1 `i ]
+"774
+}
+[e :U 231 ]
+[; ;APDS9960.c: 774: }
+[; ;APDS9960.c: 776: if( gesture_near_count_ >= 10 ) {
+"776
+[e $ ! >= _gesture_near_count_ -> 10 `i 232  ]
+{
+[; ;APDS9960.c: 777: gesture_ud_count_ = 0;
+"777
+[e = _gesture_ud_count_ -> 0 `i ]
+[; ;APDS9960.c: 778: gesture_lr_count_ = 0;
+"778
+[e = _gesture_lr_count_ -> 0 `i ]
+[; ;APDS9960.c: 779: gesture_ud_delta_ = 0;
+"779
+[e = _gesture_ud_delta_ -> 0 `i ]
+[; ;APDS9960.c: 780: gesture_lr_delta_ = 0;
+"780
+[e = _gesture_lr_delta_ -> 0 `i ]
+"781
+}
+[e :U 232 ]
+"782
+}
+[e :U 230 ]
+"783
+}
+[e :U 229 ]
+[; ;APDS9960.c: 781: }
+[; ;APDS9960.c: 782: }
+[; ;APDS9960.c: 783: }
+[; ;APDS9960.c: 785: return 0;
+"785
+[e ) -> -> 0 `i `uc ]
+[e $UE 199  ]
+[; ;APDS9960.c: 786: }
+"786
+[e :UE 199 ]
+}
+"789
+[v _decodeGesture `(uc ~T0 @X0 1 ef ]
+"790
+{
+[; ;APDS9960.c: 789: bool decodeGesture()
+[; ;APDS9960.c: 790: {
+[e :U _decodeGesture ]
+[f ]
+[; ;APDS9960.c: 792: if( gesture_state_ == NEAR_STATE ) {
+"792
+[e $ ! == _gesture_state_ -> . `E79 1 `i 234  ]
+{
+[; ;APDS9960.c: 793: gesture_motion_ = DIR_NEAR;
+"793
+[e = _gesture_motion_ -> . `E70 5 `i ]
+[; ;APDS9960.c: 794: return 1;
+"794
+[e ) -> -> 1 `i `uc ]
+[e $UE 233  ]
+"795
+}
+[; ;APDS9960.c: 795: } else if ( gesture_state_ == FAR_STATE ) {
+[e $U 235  ]
+[e :U 234 ]
+[e $ ! == _gesture_state_ -> . `E79 2 `i 236  ]
+{
+[; ;APDS9960.c: 796: gesture_motion_ = DIR_FAR;
+"796
+[e = _gesture_motion_ -> . `E70 6 `i ]
+[; ;APDS9960.c: 797: return 1;
+"797
+[e ) -> -> 1 `i `uc ]
+[e $UE 233  ]
+"798
+}
+[e :U 236 ]
+"801
+[e :U 235 ]
+[; ;APDS9960.c: 798: }
+[; ;APDS9960.c: 801: if( (gesture_ud_count_ == -1) && (gesture_lr_count_ == 0) ) {
+[e $ ! && == _gesture_ud_count_ -U -> 1 `i == _gesture_lr_count_ -> 0 `i 237  ]
+{
+[; ;APDS9960.c: 802: gesture_motion_ = DIR_UP;
+"802
+[e = _gesture_motion_ -> . `E70 3 `i ]
+"803
+}
+[; ;APDS9960.c: 803: } else if( (gesture_ud_count_ == 1) && (gesture_lr_count_ == 0) ) {
+[e $U 238  ]
+[e :U 237 ]
+[e $ ! && == _gesture_ud_count_ -> 1 `i == _gesture_lr_count_ -> 0 `i 239  ]
+{
+[; ;APDS9960.c: 804: gesture_motion_ = DIR_DOWN;
+"804
+[e = _gesture_motion_ -> . `E70 4 `i ]
+"805
+}
+[; ;APDS9960.c: 805: } else if( (gesture_ud_count_ == 0) && (gesture_lr_count_ == 1) ) {
+[e $U 240  ]
+[e :U 239 ]
+[e $ ! && == _gesture_ud_count_ -> 0 `i == _gesture_lr_count_ -> 1 `i 241  ]
+{
+[; ;APDS9960.c: 806: gesture_motion_ = DIR_RIGHT;
+"806
+[e = _gesture_motion_ -> . `E70 2 `i ]
+"807
+}
+[; ;APDS9960.c: 807: } else if( (gesture_ud_count_ == 0) && (gesture_lr_count_ == -1) ) {
+[e $U 242  ]
+[e :U 241 ]
+[e $ ! && == _gesture_ud_count_ -> 0 `i == _gesture_lr_count_ -U -> 1 `i 243  ]
+{
+[; ;APDS9960.c: 808: gesture_motion_ = DIR_LEFT;
+"808
+[e = _gesture_motion_ -> . `E70 1 `i ]
+"809
+}
+[; ;APDS9960.c: 809: } else if( (gesture_ud_count_ == -1) && (gesture_lr_count_ == 1) ) {
+[e $U 244  ]
+[e :U 243 ]
+[e $ ! && == _gesture_ud_count_ -U -> 1 `i == _gesture_lr_count_ -> 1 `i 245  ]
+{
+[; ;APDS9960.c: 810: if( ((gesture_ud_delta_) > 0 ? (gesture_ud_delta_) : -(gesture_ud_delta_)) > ((gesture_lr_delta_) > 0 ? (gesture_lr_delta_) : -(gesture_lr_delta_)) ) {
+"810
+[e $ ! > ? > _gesture_ud_delta_ -> 0 `i : _gesture_ud_delta_ -U _gesture_ud_delta_ ? > _gesture_lr_delta_ -> 0 `i : _gesture_lr_delta_ -U _gesture_lr_delta_ 246  ]
+{
+[; ;APDS9960.c: 811: gesture_motion_ = DIR_UP;
+"811
+[e = _gesture_motion_ -> . `E70 3 `i ]
+"812
+}
+[; ;APDS9960.c: 812: } else {
+[e $U 247  ]
+[e :U 246 ]
+{
+[; ;APDS9960.c: 813: gesture_motion_ = DIR_RIGHT;
+"813
+[e = _gesture_motion_ -> . `E70 2 `i ]
+"814
+}
+[e :U 247 ]
+"815
+}
+[; ;APDS9960.c: 814: }
+[; ;APDS9960.c: 815: } else if( (gesture_ud_count_ == 1) && (gesture_lr_count_ == -1) ) {
+[e $U 248  ]
+[e :U 245 ]
+[e $ ! && == _gesture_ud_count_ -> 1 `i == _gesture_lr_count_ -U -> 1 `i 249  ]
+{
+[; ;APDS9960.c: 816: if( ((gesture_ud_delta_) > 0 ? (gesture_ud_delta_) : -(gesture_ud_delta_)) > ((gesture_lr_delta_) > 0 ? (gesture_lr_delta_) : -(gesture_lr_delta_)) ) {
+"816
+[e $ ! > ? > _gesture_ud_delta_ -> 0 `i : _gesture_ud_delta_ -U _gesture_ud_delta_ ? > _gesture_lr_delta_ -> 0 `i : _gesture_lr_delta_ -U _gesture_lr_delta_ 250  ]
+{
+[; ;APDS9960.c: 817: gesture_motion_ = DIR_DOWN;
+"817
+[e = _gesture_motion_ -> . `E70 4 `i ]
+"818
+}
+[; ;APDS9960.c: 818: } else {
+[e $U 251  ]
+[e :U 250 ]
+{
+[; ;APDS9960.c: 819: gesture_motion_ = DIR_LEFT;
+"819
+[e = _gesture_motion_ -> . `E70 1 `i ]
+"820
+}
+[e :U 251 ]
+"821
+}
+[; ;APDS9960.c: 820: }
+[; ;APDS9960.c: 821: } else if( (gesture_ud_count_ == -1) && (gesture_lr_count_ == -1) ) {
+[e $U 252  ]
+[e :U 249 ]
+[e $ ! && == _gesture_ud_count_ -U -> 1 `i == _gesture_lr_count_ -U -> 1 `i 253  ]
+{
+[; ;APDS9960.c: 822: if( ((gesture_ud_delta_) > 0 ? (gesture_ud_delta_) : -(gesture_ud_delta_)) > ((gesture_lr_delta_) > 0 ? (gesture_lr_delta_) : -(gesture_lr_delta_)) ) {
+"822
+[e $ ! > ? > _gesture_ud_delta_ -> 0 `i : _gesture_ud_delta_ -U _gesture_ud_delta_ ? > _gesture_lr_delta_ -> 0 `i : _gesture_lr_delta_ -U _gesture_lr_delta_ 254  ]
+{
+[; ;APDS9960.c: 823: gesture_motion_ = DIR_UP;
+"823
+[e = _gesture_motion_ -> . `E70 3 `i ]
+"824
+}
+[; ;APDS9960.c: 824: } else {
+[e $U 255  ]
+[e :U 254 ]
+{
+[; ;APDS9960.c: 825: gesture_motion_ = DIR_LEFT;
+"825
+[e = _gesture_motion_ -> . `E70 1 `i ]
+"826
+}
+[e :U 255 ]
+"827
+}
+[; ;APDS9960.c: 826: }
+[; ;APDS9960.c: 827: } else if( (gesture_ud_count_ == 1) && (gesture_lr_count_ == 1) ) {
+[e $U 256  ]
+[e :U 253 ]
+[e $ ! && == _gesture_ud_count_ -> 1 `i == _gesture_lr_count_ -> 1 `i 257  ]
+{
+[; ;APDS9960.c: 828: if( ((gesture_ud_delta_) > 0 ? (gesture_ud_delta_) : -(gesture_ud_delta_)) > ((gesture_lr_delta_) > 0 ? (gesture_lr_delta_) : -(gesture_lr_delta_)) ) {
+"828
+[e $ ! > ? > _gesture_ud_delta_ -> 0 `i : _gesture_ud_delta_ -U _gesture_ud_delta_ ? > _gesture_lr_delta_ -> 0 `i : _gesture_lr_delta_ -U _gesture_lr_delta_ 258  ]
+{
+[; ;APDS9960.c: 829: gesture_motion_ = DIR_DOWN;
+"829
+[e = _gesture_motion_ -> . `E70 4 `i ]
+"830
+}
+[; ;APDS9960.c: 830: } else {
+[e $U 259  ]
+[e :U 258 ]
+{
+[; ;APDS9960.c: 831: gesture_motion_ = DIR_RIGHT;
+"831
+[e = _gesture_motion_ -> . `E70 2 `i ]
+"832
+}
+[e :U 259 ]
+"833
+}
+[; ;APDS9960.c: 832: }
+[; ;APDS9960.c: 833: } else {
+[e $U 260  ]
+[e :U 257 ]
+{
+[; ;APDS9960.c: 834: return 0;
+"834
+[e ) -> -> 0 `i `uc ]
+[e $UE 233  ]
+"835
+}
+[e :U 260 ]
+[e :U 256 ]
+[e :U 252 ]
+[e :U 248 ]
+[e :U 244 ]
+[e :U 242 ]
+[e :U 240 ]
+[e :U 238 ]
+[; ;APDS9960.c: 835: }
+[; ;APDS9960.c: 837: return 1;
+"837
+[e ) -> -> 1 `i `uc ]
+[e $UE 233  ]
+[; ;APDS9960.c: 838: }
+"838
+[e :UE 233 ]
+}
+"841
+[v _wireReadDataBlock `(i ~T0 @X0 1 ef3`uc`*uc`ui ]
+"842
+{
+[; ;APDS9960.c: 841: int wireReadDataBlock( uint8_t reg, uint8_t *val, unsigned int len)
+[; ;APDS9960.c: 842: {
+[e :U _wireReadDataBlock ]
+"841
+[v _reg `uc ~T0 @X0 1 r1 ]
+[v _val `*uc ~T0 @X0 1 r2 ]
+[v _len `ui ~T0 @X0 1 r3 ]
+"842
+[f ]
+"843
+[v _j `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 843: unsigned char j = 0;
+[e = _j -> -> 0 `i `uc ]
+[; ;APDS9960.c: 845: I2C_Start();
+"845
+[e ( _I2C_Start ..  ]
+[; ;APDS9960.c: 846: I2C_Write_Byte((0x39 << 1 )| 0x00);
+"846
+[e ( _I2C_Write_Byte (1 -> | << -> 57 `i -> 1 `i -> 0 `i `uc ]
+[; ;APDS9960.c: 848: I2C_Write_Byte(reg);
+"848
+[e ( _I2C_Write_Byte (1 _reg ]
+[; ;APDS9960.c: 850: for(j= 0; j < len ; j++)
+"850
+{
+[e = _j -> -> 0 `i `uc ]
+[e $U 265  ]
+"851
+[e :U 262 ]
+[; ;APDS9960.c: 851: {
+{
+[; ;APDS9960.c: 853: I2C_ReStart();
+"853
+[e ( _I2C_ReStart ..  ]
+[; ;APDS9960.c: 854: I2C_Write_Byte((0x39 << 1) | 0x01);
+"854
+[e ( _I2C_Write_Byte (1 -> | << -> 57 `i -> 1 `i -> 1 `i `uc ]
+[; ;APDS9960.c: 855: val[j]=I2C_Read_Byte();
+"855
+[e = *U + _val * -> _j `ux -> -> # *U _val `ui `ux ( _I2C_Read_Byte ..  ]
+[; ;APDS9960.c: 856: I2C_Send_NACK();
+"856
+[e ( _I2C_Send_NACK ..  ]
+"858
+}
+"850
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 265 ]
+[e $ < -> _j `ui _len 262  ]
+[e :U 263 ]
+"858
+}
+[; ;APDS9960.c: 858: }
+[; ;APDS9960.c: 860: I2C_Stop();
+"860
+[e ( _I2C_Stop ..  ]
+[; ;APDS9960.c: 862: return (int)j;
+"862
+[e ) -> _j `i ]
+[e $UE 261  ]
+[; ;APDS9960.c: 863: }
+"863
+[e :UE 261 ]
+}
+"866
+[v _wireWriteDataByte `(i ~T0 @X0 1 ef2`uc`uc ]
+"867
+{
+[; ;APDS9960.c: 866: int wireWriteDataByte(unsigned char reg, unsigned char val)
+[; ;APDS9960.c: 867: {
+[e :U _wireWriteDataByte ]
+"866
+[v _reg `uc ~T0 @X0 1 r1 ]
+[v _val `uc ~T0 @X0 1 r2 ]
+"867
+[f ]
+[; ;APDS9960.c: 869: I2C_Start();
+"869
+[e ( _I2C_Start ..  ]
+[; ;APDS9960.c: 870: I2C_Write_Byte((0x39 << 1 )| 0x00);
+"870
+[e ( _I2C_Write_Byte (1 -> | << -> 57 `i -> 1 `i -> 0 `i `uc ]
+[; ;APDS9960.c: 871: I2C_Write_Byte(reg);
+"871
+[e ( _I2C_Write_Byte (1 _reg ]
+[; ;APDS9960.c: 872: I2C_Write_Byte(val);
+"872
+[e ( _I2C_Write_Byte (1 _val ]
+[; ;APDS9960.c: 873: I2C_Stop();
+"873
+[e ( _I2C_Stop ..  ]
+[; ;APDS9960.c: 875: return 1;
+"875
+[e ) -> 1 `i ]
+[e $UE 266  ]
+[; ;APDS9960.c: 876: }
+"876
+[e :UE 266 ]
+}
+"879
+[v _wireReadDataByte `(uc ~T0 @X0 1 ef1`uc ]
+"880
+{
+[; ;APDS9960.c: 879: unsigned char wireReadDataByte(unsigned char reg)
+[; ;APDS9960.c: 880: {
+[e :U _wireReadDataByte ]
+"879
+[v _reg `uc ~T0 @X0 1 r1 ]
+"880
+[f ]
+"882
+[v _val `uc ~T0 @X0 1 a ]
+[; ;APDS9960.c: 882: unsigned char val;
+[; ;APDS9960.c: 884: I2C_Start();
+"884
+[e ( _I2C_Start ..  ]
+[; ;APDS9960.c: 885: I2C_Write_Byte((0x39 << 1 )| 0x00);
+"885
+[e ( _I2C_Write_Byte (1 -> | << -> 57 `i -> 1 `i -> 0 `i `uc ]
+[; ;APDS9960.c: 886: I2C_Write_Byte(reg);
+"886
+[e ( _I2C_Write_Byte (1 _reg ]
+[; ;APDS9960.c: 887: I2C_ReStart();
+"887
+[e ( _I2C_ReStart ..  ]
+[; ;APDS9960.c: 888: I2C_Write_Byte((0x39 << 1) | 0x01);
+"888
+[e ( _I2C_Write_Byte (1 -> | << -> 57 `i -> 1 `i -> 1 `i `uc ]
+[; ;APDS9960.c: 889: val=I2C_Read_Byte();
+"889
+[e = _val ( _I2C_Read_Byte ..  ]
+[; ;APDS9960.c: 890: I2C_Send_NACK();
+"890
+[e ( _I2C_Send_NACK ..  ]
+[; ;APDS9960.c: 891: I2C_Stop();
+"891
+[e ( _I2C_Stop ..  ]
+[; ;APDS9960.c: 893: return (val);
+"893
+[e ) _val ]
+[e $UE 267  ]
+[; ;APDS9960.c: 895: }
+"895
+[e :UE 267 ]
+}
